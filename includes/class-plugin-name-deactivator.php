@@ -1,6 +1,6 @@
 <?php
 
-// Class fired during plugin activation
+// Class fired during plugin deactivation
 
 
 
