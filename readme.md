@@ -23,7 +23,7 @@ If you include your own classes, or third-party libraries, there are three locat
 
 The `assets` directory contains four subfolders.
 
-- `assets/fonts` is used to contain all fonts.
-- `assets/images` is used to contain all images.
-- `assets/javascript` is used to contain all javascript files.
-- `assets/stylesheets` is used to contain all css files.
+- `assets/fonts` is used to contain all fonts
+- `assets/images` is used to contain all images
+- `assets/javascript` is used to contain all javascript files
+- `assets/stylesheets` is used to contain all css files
