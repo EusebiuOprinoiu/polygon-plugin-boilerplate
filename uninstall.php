@@ -1,6 +1,6 @@
 <?php
 
-// Remove all options on uninstall and flush rewrite rules
+// Remove all options on uninstall
 
 
 
@@ -13,5 +13,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 
 
-// Flush rewrite rules
-flush_rewrite_rules();
+// Do something
