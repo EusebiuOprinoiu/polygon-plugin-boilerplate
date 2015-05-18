@@ -5,7 +5,7 @@
 
 
 
-class Plugin_Name_Activator {
+class Polygon_Plugin_Activator {
 	public static function activate() {
 		// Do something
 	}

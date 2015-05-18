@@ -5,7 +5,7 @@
 
 
 
-class Plugin_Name_Loader {
+class Polygon_Plugin_Loader {
 
 	// Array of actions
 	protected $actions;

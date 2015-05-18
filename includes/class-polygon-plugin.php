@@ -5,7 +5,7 @@
 
 
 
-class Plugin_Name {
+class Polygon_Plugin {
 
 	// String responsible for maintaining and registering hooks
 	protected $loader;
@@ -22,8 +22,8 @@ class Plugin_Name {
 	// Define the core functionality of the plugin
 	public function __construct() {
 
-		$this->plugin_name = PLUGIN_NAME_PLUGIN_NAME;
-		$this->version     = PLUGIN_NAME_VERSION;		
+		$this->plugin_name = POLYGON_PLUGIN_PLUGIN_NAME;
+		$this->version     = POLYGON_PLUGIN_VERSION;		
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -38,18 +38,18 @@ class Plugin_Name {
 	// Load the required dependencies for the plugin
 	private function load_dependencies() {
 		// Class responsible for orchestrating the actions and filters of the core plugin
-		require_once( PLUGIN_NAME_DIR_PATH . 'includes/class-plugin-name-loader.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-loader.php' );
 
 		// Class responsible for defining internationalization functionality of the plugin
-		require_once( PLUGIN_NAME_DIR_PATH . 'includes/class-plugin-name-i18n.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php' );
 
 		// Class responsible for defining all actions that occur in the admin area
-		require_once( PLUGIN_NAME_DIR_PATH . 'includes/admin/class-plugin-name-admin.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/admin/class-polygon-plugin-admin.php' );
 
 		// Class responsible for defining all actions that occur in the frontend
-		require_once( PLUGIN_NAME_DIR_PATH . 'includes/public/class-plugin-name-public.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/public/class-polygon-plugin-public.php' );
 
-		$this->loader = new Plugin_Name_Loader();
+		$this->loader = new Polygon_Plugin_Loader();
 	}
 
 
@@ -57,8 +57,8 @@ class Plugin_Name {
 
 	// Define locale for internationalization
 	private function set_locale() {
-		$plugin_i18n = new Plugin_Name_i18n();
-		$plugin_i18n->set_domain( $this->get_plugin_name() );
+		$plugin_i18n = new Polygon_Plugin_i18n();
+		$plugin_i18n->set_domain( $this->get_polygon_plugin() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
@@ -68,7 +68,7 @@ class Plugin_Name {
 
 	// Register hooks for the admin area functionality
 	private function define_admin_hooks() {
-		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Polygon_Plugin_Admin( $this->get_polygon_plugin(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -79,7 +79,7 @@ class Plugin_Name {
 
 	// Register hooks for the public-facing functionality
 	private function define_public_hooks() {
-		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Polygon_Plugin_Public( $this->get_polygon_plugin(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -97,7 +97,7 @@ class Plugin_Name {
 
 
 	// Retreive plugin name (slug)
-	public function get_plugin_name() {
+	public function get_polygon_plugin() {
 		return $this->plugin_name;
 	}
 

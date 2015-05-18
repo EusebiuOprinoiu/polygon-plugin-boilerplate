@@ -15,15 +15,15 @@ Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundat
 
 If you include your own classes, or third-party libraries, there are three locations in which said files may go:
 
-- `plugin-name/includes` is where functionality shared between the admin area and the public-facing parts of the site reside
-- `plugin-name/includes/admin` is for all admin-specific functionality
-- `plugin-name/includes/public` is for all public-facing functionality
+- `includes` is where functionality shared between the admin area and the public-facing parts of the site reside
+- `includes/admin` is for all admin-specific functionality
+- `includes/public` is for all public-facing functionality
 
 ### Assets
 
 The `assets` directory contains four subfolders.
 
-- `fonts` is used to contain all fonts.
-- `images` is used to contain all images.
-- `javascript` is used to contain all javascript files.
-- `stylesheets` is used to contain all css files.
+- `assets/fonts` is used to contain all fonts.
+- `assets/images` is used to contain all images.
+- `assets/javascript` is used to contain all javascript files.
+- `assets/stylesheets` is used to contain all css files.

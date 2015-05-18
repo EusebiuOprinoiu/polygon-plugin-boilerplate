@@ -5,7 +5,7 @@
 
 
 
-class Plugin_Name_Deactivator {
+class Polygon_Plugin_Deactivator {
 	public static function deactivate() {
 		// Do something
 	}
