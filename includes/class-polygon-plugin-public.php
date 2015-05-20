@@ -7,11 +7,9 @@
 
 class Polygon_Plugin_Public {
 
-	// The ID of this plugin
-	private $plugin_name;
-
-	// The version of this plugin
-	private $version;
+	// Variables
+	private $plugin_name; // Unique plugin name
+	private $version;     // Current plugin version
 
 
 

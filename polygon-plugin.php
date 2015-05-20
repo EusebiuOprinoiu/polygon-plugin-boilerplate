@@ -22,25 +22,16 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 
-// Define the plugin name
-define( 'POLYGON_PLUGIN_PLUGIN_NAME', 'polygon-plugin' );
-
-// Define the plugin version
-define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );
-
-// Define path to main plugin file
-define( 'POLYGON_PLUGIN_MAIN_FILE', __FILE__ );
-
-// Define path to plugin directory
-define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-
-// Define url to plugin directory
-define ( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+// Constants
+define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                      // Current plugin version
+define( 'POLYGON_PLUGIN_MAIN_FILE', __FILE__ );                   // Path to main plugin file
+define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) ); // Path to plugin directory
+define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );   // URL to plugin directory
 
 
 
 
-// The code that runs during plugin activation
+// Code that runs during plugin activation
 function activate_polygon_plugin() {
 	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php' );
 	Polygon_Plugin_Activator::activate();
@@ -49,7 +40,7 @@ function activate_polygon_plugin() {
 
 
 
-// The code that runs during plugin deactivation
+// Code that runs during plugin deactivation
 function deactivate_polygon_plugin() {
 	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php' );
 	Polygon_Plugin_Deactivator::deactivate();
@@ -65,7 +56,7 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
 
 
 
-// load and execute plugin
+// Load and execute plugin
 function run_polygon_plugin() {
 	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php' );
 	$plugin = new Polygon_Plugin();

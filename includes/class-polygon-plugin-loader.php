@@ -7,11 +7,9 @@
 
 class Polygon_Plugin_Loader {
 
-	// Array of actions
-	protected $actions;
-
-	// Array of filters
-	protected $filters;
+	// Variables
+	protected $actions; // Array of actions
+	protected $filters; // Array of filters
 
 
 
@@ -41,7 +39,7 @@ class Polygon_Plugin_Loader {
 
 
 
-	// Helper function used to register the actions and hooks into a single collection
+	// Helper function used to register all hooks into a single collection
 	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
 		$hooks[] = array(
 			'hook'          => $hook,

@@ -7,21 +7,17 @@
 
 class Polygon_Plugin {
 
-	// String responsible for maintaining and registering hooks
-	protected $loader;
-
-	// String used to uniquely identify the plugin
-	protected $plugin_name;
-
-	// Current version of the plugin
-	protected $version;
+	// Variables
+	protected $plugin_name; // String used to uniquely identify the plugin (slug)
+	protected $version;     // Current version of the plugin
+	protected $loader;      // String responsible for maintaining and registering hooks
 
 
 
 
-	// Define the core functionality of the plugin
+	// Define core functionality of the plugin
 	public function __construct() {
-		$this->plugin_name = POLYGON_PLUGIN_PLUGIN_NAME;
+		$this->plugin_name = 'polygon-plugin';
 		$this->version     = POLYGON_PLUGIN_VERSION;		
 
 		$this->load_dependencies();
@@ -32,7 +28,7 @@ class Polygon_Plugin {
 
 
 
-	// Load the required dependencies for the plugin
+	// Load required dependencies for the plugin
 	private function load_dependencies() {
 		// Class responsible for orchestrating the actions and filters of the core plugin
 		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-loader.php' );
@@ -54,8 +50,7 @@ class Polygon_Plugin {
 
 	// Define locale for internationalization
 	private function set_locale() {
-		$plugin_i18n = new Polygon_Plugin_i18n();
-		$plugin_i18n->set_domain( $this->get_polygon_plugin() );
+		$plugin_i18n = new Polygon_Plugin_i18n( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
@@ -66,8 +61,8 @@ class Polygon_Plugin {
 	// Register hooks for our plugin
 	private function define_hooks() {
 		// Create objects from classes
-		$plugin_admin  = new Polygon_Plugin_Admin( $this->get_polygon_plugin(), $this->get_version() );
-		$plugin_public = new Polygon_Plugin_Public( $this->get_polygon_plugin(), $this->get_version() );
+		$plugin_admin  = new Polygon_Plugin_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Polygon_Plugin_Public( $this->get_plugin_name(), $this->get_version() );
 
 		// Register admin hooks
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
@@ -82,7 +77,7 @@ class Polygon_Plugin {
 	
 
 
-	// Run the loader and execute all hooks
+	// Run loader and execute all hooks
 	public function run() {
 		$this->loader->run();
 	}
@@ -91,14 +86,14 @@ class Polygon_Plugin {
 
 
 	// Retreive plugin name (slug)
-	public function get_polygon_plugin() {
+	public function get_plugin_name() {
 		return $this->plugin_name;
 	}
 
 	
 
 
-	// Retreive the plugin loader
+	// Retreive plugin loader
 	public function get_loader() {
 		return $this->loader;
 	}
@@ -106,7 +101,7 @@ class Polygon_Plugin {
 
 
 
-	// Retreive the plugin version
+	// Retreive plugin version
 	public function get_version() {
 		return $this->version;
 	}
