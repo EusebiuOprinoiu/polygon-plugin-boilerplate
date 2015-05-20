@@ -52,7 +52,7 @@ class Polygon_Plugin {
 	private function set_locale() {
 		$plugin_i18n = new Polygon_Plugin_i18n( $this->get_plugin_name() );
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+		$this->loader->add_action( 'after_setup_theme', $plugin_i18n, 'load_plugin_textdomain' );
 	}
 
 
