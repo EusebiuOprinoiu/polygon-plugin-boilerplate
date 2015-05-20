@@ -9,7 +9,9 @@ Short description of your awesome plugin
 
 == Description ==
 
-Long description of your awesome plugin goes here. Markdown format supported.
+Long description of your awesome plugin. Markdown format supported.
+
+Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The curent version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
 
 = Subheading 01 =
 
