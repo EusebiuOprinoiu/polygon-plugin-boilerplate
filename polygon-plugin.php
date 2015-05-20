@@ -9,9 +9,6 @@ Author URI: https://polygonthemes.com
 Text Domain: polygon-plugin
 Domain Path: /languages/
 License: GNU General Public License version 3.0
-
-GitHub Plugin URI: https://github.com/EusebiuOprinoiu/polygon-plugin-boilerplate
-GitHub Branch: master
 */
 
 
@@ -68,14 +65,9 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
 
 
 
-// Load main plugin class
-require( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php' );
-
-
-
-
-// Begin execution of the plugin
+// load and execute plugin
 function run_polygon_plugin() {
+	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php' );
 	$plugin = new Polygon_Plugin();
 	$plugin->run();
 }

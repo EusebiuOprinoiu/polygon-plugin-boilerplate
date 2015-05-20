@@ -1,0 +1,24 @@
+{
+    "name" : "Polygon Plugin",
+    "slug" : "polygon-plugin",
+    "homepage" : "http://polygonthemes.com",
+    "download_url" : "http://polygonthemes.com/plugin-path/polygon-plugin.zip",
+    
+    "version" : "1.2.0",
+    "requires" : "3.5",
+    "tested" : "4.1",
+    "last_updated" : "2015-01-20 12:00:00",
+    
+    "author" : "Polygon Themes",
+    "author_homepage" : "http://polygonthemes.com",
+    
+    "sections" : {
+        "description" : "Your awesome plugin description goes here. <h4>Cool Heading</h4> <ul><li>Item 01</li> <li>Item 02</li> </ul>",
+        "installation" : "If this plugin was not distributed as a dependancy with a premium theme you need to install it manually. To do that follow the steps below:<h4>Manual install from Dashboard</h4><ul> <li>Log into WordPress and navigate to the 'Plugins' screen</li><li>Press the 'Add New' button in the plugins dashboard</li><li>Navigate to the 'Upload' area</li><li>Select <code>polygon-plugin.zip</code> from your computer and click 'Install Now'</li><li>Locate 'Polygon Plugin' in the list and click 'Activate'</li></ul><h4>Manual install using FTP</h4><ul> <li>Upload <code>polygon-plugin</code> to the <code>/wp-content/plugins/</code> directory</li><li>Log into WordPress and navigate to the 'Plugins' screen</li><li>Locate 'Polygon Plugin' in the list and click 'Activate'</li></ul>",
+        "changelog" : "Changelog history: <h4>Version 1.0.0</h4> <ul><li>First release</li></ul>"
+    },
+    
+    "rating" : 95,
+    "num_ratings" : 150,
+    "downloaded" : 2500
+}

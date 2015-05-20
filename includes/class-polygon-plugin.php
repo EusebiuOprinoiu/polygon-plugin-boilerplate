@@ -21,15 +21,12 @@ class Polygon_Plugin {
 
 	// Define the core functionality of the plugin
 	public function __construct() {
-
 		$this->plugin_name = POLYGON_PLUGIN_PLUGIN_NAME;
 		$this->version     = POLYGON_PLUGIN_VERSION;		
 
 		$this->load_dependencies();
 		$this->set_locale();
-		$this->define_admin_hooks();
-		$this->define_public_hooks();
-
+		$this->define_hooks();
 	}
 
 
@@ -44,10 +41,10 @@ class Polygon_Plugin {
 		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php' );
 
 		// Class responsible for defining all actions that occur in the admin area
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/admin/class-polygon-plugin-admin.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-admin.php' );
 
 		// Class responsible for defining all actions that occur in the frontend
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/public/class-polygon-plugin-public.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-public.php' );
 
 		$this->loader = new Polygon_Plugin_Loader();
 	}
@@ -66,21 +63,18 @@ class Polygon_Plugin {
 
 
 
-	// Register hooks for the admin area functionality
-	private function define_admin_hooks() {
-		$plugin_admin = new Polygon_Plugin_Admin( $this->get_polygon_plugin(), $this->get_version() );
-
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-	}
-
-
-
-
-	// Register hooks for the public-facing functionality
-	private function define_public_hooks() {
+	// Register hooks for our plugin
+	private function define_hooks() {
+		// Create objects from classes
+		$plugin_admin  = new Polygon_Plugin_Admin( $this->get_polygon_plugin(), $this->get_version() );
 		$plugin_public = new Polygon_Plugin_Public( $this->get_polygon_plugin(), $this->get_version() );
 
+		// Register admin hooks
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'load_update_checker' );
+
+		// Register public hooks
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 	}

@@ -28,7 +28,6 @@ class Polygon_Plugin_Admin {
 	// Register stylesheets for the admin area
 	public function enqueue_styles() {
 		// Enqueue styles
-		// wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/polygon-plugin-admin.css', array(), $this->version, 'all' );
 	}
 
 
@@ -37,7 +36,19 @@ class Polygon_Plugin_Admin {
 	// Register javascript for the admin area
 	public function enqueue_scripts() {
 		// Enqueue scripts
-		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/polygon-plugin-admin.js', array( 'jquery' ), $this->version, false );
+	}
+
+
+
+
+	// Enable automatic updates
+	public function load_update_checker() {
+		include_once( POLYGON_PLUGIN_DIR_PATH . 'includes/third-party/update-checker/plugin-update-checker.php' );
+		$update_checker = PucFactory::buildUpdateChecker( 
+			'https://polygonthemes.com/update-server/?action=get_metadata&slug=polygon-plugin',
+			POLYGON_PLUGIN_MAIN_FILE, 
+			'polygon-plugin' 
+		);
 	}
 
 }
