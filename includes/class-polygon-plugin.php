@@ -37,10 +37,10 @@ class Polygon_Plugin {
 		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php' );
 
 		// Class responsible for defining all actions that occur in the admin area
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-admin.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-admin.php' );
 
 		// Class responsible for defining all actions that occur in the frontend
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-public.php' );
+		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-public.php' );
 
 		$this->loader = new Polygon_Plugin_Loader();
 	}
