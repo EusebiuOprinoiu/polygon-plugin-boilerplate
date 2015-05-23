@@ -13,4 +13,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 
 
-// Do something
+// Remove plugin options
+delete_option( 'polygon_plugin' );
+delete_option( 'external_updates-polygon-plugin' );
