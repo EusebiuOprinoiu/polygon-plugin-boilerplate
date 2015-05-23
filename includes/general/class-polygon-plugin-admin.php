@@ -53,7 +53,7 @@ class Polygon_Plugin_Admin {
 
 
 	// Migrate and update options on plugin updates
-	public function migrate_options_on_plugin_updates() {
+	public function maybe_update() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
 		if ( version_compare( $this->version, $polygon_plugin['plugin_version'] ) > 0 ) {

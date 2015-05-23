@@ -68,7 +68,7 @@ class Polygon_Plugin {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'load_update_checker' );
-		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'migrate_options_on_plugin_updates' );
+		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'maybe_update' );
 
 		// Register public hooks
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
