@@ -11,28 +11,28 @@ class Polygon_Plugin_Activator {
 	public static function activate() {
 		// Create plugin options if not available
 		if ( ! get_option( 'polygon_plugin' ) ) {
-			$polygon_plugin = array();
+			$polygon_plugin = array(
+				'plugin-version'       => POLYGON_PLUGIN_VERSION,
+				'last-updated-version' => POLYGON_PLUGIN_VERSION,
+			);
+
 			add_option( 'polygon_plugin', $polygon_plugin );
 		}
 
 
 
-		// Add default values for options
+		// Get option values 
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
-		if ( ! isset( $polygon_plugin['plugin-version'] ) ) {
-			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
-		}
 
-		if ( ! isset( $polygon_plugin['last-updated-version'] ) ) {
-			$polygon_plugin['last-updated-version'] = POLYGON_PLUGIN_VERSION;
-		}
 
+		// Set option values on every plugin activation
+		// $polygon_plugin['key-id'] = 'value';
+
+
+
+		// Update option values
 		update_option( 'polygon_plugin', $polygon_plugin );
-
-
-
-		// Do more stuff
 	}
 
 }
