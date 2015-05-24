@@ -56,25 +56,25 @@ class Polygon_Plugin_Admin {
 	public function maybe_update() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
-		if ( version_compare( $this->version, $polygon_plugin['plugin_version'] ) > 0 ) {
+		if ( version_compare( $this->version, $polygon_plugin['plugin-version'] ) > 0 ) {
 			/*
 			// Migrate options to version 1.1.0
-			if ( version_compare( $polygon_plugin['options_last_updated'], '0.5.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['last-updated-version'], '0.5.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.1.0.php' );
-				$polygon_plugin['options_last_updated'] = '0.5.0';
+				$polygon_plugin['last-updated-version'] = '0.5.0';
 			}
 
 			// Migrate options to version 1.2.0
-			if ( version_compare( $polygon_plugin['options_last_updated'], '1.0.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['last-updated-version'], '1.0.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.2.0.php' );
-				$polygon_plugin['options_last_updated'] = '1.0.0';
+				$polygon_plugin['last-updated-version'] = '1.0.0';
 			}
 			*/
 
 
 
 			// Update plugin version
-			$polygon_plugin['plugin_version'] = $this->version;
+			$polygon_plugin['plugin-version'] = $this->version;
 
 			// Update plugin options
 			update_option( 'polygon_plugin', $polygon_plugin );

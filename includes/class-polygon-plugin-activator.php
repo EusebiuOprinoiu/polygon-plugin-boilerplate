@@ -20,12 +20,12 @@ class Polygon_Plugin_Activator {
 		// Add default values for options
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
-		if ( ! isset( $polygon_plugin['plugin_version'] ) ) {
-			$polygon_plugin['plugin_version'] = POLYGON_PLUGIN_VERSION;
+		if ( ! isset( $polygon_plugin['plugin-version'] ) ) {
+			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
 		}
 
-		if ( ! isset( $polygon_plugin['options_last_updated'] ) ) {
-			$polygon_plugin['options_last_updated'] = POLYGON_PLUGIN_VERSION;
+		if ( ! isset( $polygon_plugin['last-updated-version'] ) ) {
+			$polygon_plugin['last-updated-version'] = POLYGON_PLUGIN_VERSION;
 		}
 
 		update_option( 'polygon_plugin', $polygon_plugin );
