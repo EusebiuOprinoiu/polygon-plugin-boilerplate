@@ -10,6 +10,9 @@ class Polygon_Plugin_Update_PHP {
 	// Variables
 	protected $minimum_version; // Minimum required version of PHP
 
+
+	
+
 	// Construct
 	public function __construct() {
 		$this->minimum_version = '5.3';

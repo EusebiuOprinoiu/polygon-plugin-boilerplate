@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Polygon Plugin Boilerplate\n"
-"POT-Creation-Date: 2015-05-18 22:56+0200\n"
-"PO-Revision-Date: 2015-05-18 22:56+0200\n"
+"POT-Creation-Date: 2015-05-24 04:52+0200\n"
+"PO-Revision-Date: 2015-05-24 04:52+0200\n"
 "Last-Translator: Eusebiu Oprinoiu <eusebiu.websites@outlook.com>\n"
 "Language-Team: Polygon Themes\n"
 "Language: en_US\n"
@@ -14,7 +14,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__();esc_attr_e();esc_html__();"
-"esc_html_e();_x;_ex();esc_attr_x();esc_html_x();_n();_nx();"
-"_n_noop();_nx_noop()\n"
+"esc_html_e();_x;_ex();esc_attr_x();esc_html_x();_n();_nx();_n_noop();"
+"_nx_noop()\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: includes/third-party\n"
+
+#: includes/class-polygon-plugin-update-php.php:48
+msgid "WARNING: You server is running outdated software!"
+msgstr ""
+
+#: includes/class-polygon-plugin-update-php.php:51
+#, php-format
+msgid ""
+"Polygon Plugin can not run on PHP versions older than %1$s. You are running "
+"on version %2$s. Upgrade your PHP version or switch to a decent host."
+msgstr ""
