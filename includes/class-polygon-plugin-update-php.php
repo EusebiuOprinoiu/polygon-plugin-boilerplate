@@ -15,7 +15,7 @@ class Polygon_Plugin_Update_PHP {
 
 	// Construct
 	public function __construct() {
-		$this->minimum_version = '5.3';
+		$this->minimum_version = '5.4';
 
 		if ( ! $this->check() ) {
 			add_action( 'admin_notices', array( $this, 'update_php_warning' ) );
