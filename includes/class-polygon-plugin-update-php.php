@@ -48,7 +48,7 @@ class Polygon_Plugin_Update_PHP {
 						<b><?php echo __( 'WARNING: You server is running outdated software!', 'polygon-plugin' ); ?></b>
 					</p>
 					<p>
-						<?php printf( __( 'Polygon Plugin can not run on PHP versions older than %1$s. You are running on version %2$s. Upgrade your PHP version or switch to a decent host.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION); ?>
+						<?php printf( __( 'Polygon Plugin can not run on PHP versions older than %1$s. You are running on version %2$s. Upgrade your PHP version or switch to a decent host.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION ); ?>
 					</p>
 					<p></p>
 				</div>
