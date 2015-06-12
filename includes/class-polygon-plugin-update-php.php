@@ -77,8 +77,8 @@ class Polygon_Plugin_Update_PHP {
 	/**
 	 * Display PHP warning.
 	 *
-	 * Display a warning if the server is running outdated software advising the user to update
-	 * their PHP or switch to a decent host.
+	 * If the server is running outdated software advise users to update their PHP
+	 * or switch to a decent host.
 	 *
 	 * @since     1.0.0
 	 */

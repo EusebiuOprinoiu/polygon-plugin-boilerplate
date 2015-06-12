@@ -16,8 +16,8 @@
 /**
  * Define the internationalization functionality.
  *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
+ * Load and define the internationalization files for this plugin making it ready
+ * for translation.
  *
  * @since    1.0.0
  */
