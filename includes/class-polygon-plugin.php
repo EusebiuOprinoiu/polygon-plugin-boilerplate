@@ -137,6 +137,8 @@ class Polygon_Plugin {
 	/**
 	 * Register hooks for our plugin.
 	 *
+	 * Create the objects required for our plugin and register all hooks using the plugin loader.
+	 *
 	 * @since     1.0.0
 	 * @access    private
 	 */
@@ -162,6 +164,8 @@ class Polygon_Plugin {
 	/**
 	 * Run loader and execute all hooks.
 	 *
+	 * Run the plugin loader and execute all previously registered hooks.
+	 *
 	 * @since    1.0.0
 	 */
 	public function run() {
@@ -172,7 +176,9 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Retreive the plugin name (slug).
+	 * Retreive the plugin name.
+	 *
+	 * Retreive the unique identifier of our plugin (slug) and return it as a string.
 	 *
 	 * @since     1.0.0
 	 * @return    string
@@ -187,6 +193,8 @@ class Polygon_Plugin {
 	/**
 	 * Retreive the plugin loader.
 	 *
+	 * Retreive the object containing all hooks registered by our plugin.
+	 *
 	 * @since     1.0.0
 	 * @return    object
 	 */
@@ -199,6 +207,8 @@ class Polygon_Plugin {
 
 	/**
 	 * Retreive the plugin version.
+	 *
+	 * Retreive the version of our plugin and return it as a string.
 	 *
 	 * @since     1.0.0
 	 * @return    string
