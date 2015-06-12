@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The file that contains the class that checks the PHP version
+ * The file that contains the class that checks for outdated software
  *
  * A class definition that checks if the server is running an outdated version
  * of PHP.

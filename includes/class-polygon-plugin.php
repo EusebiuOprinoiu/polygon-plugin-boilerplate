@@ -66,7 +66,7 @@ class Polygon_Plugin {
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load the dependencies, define the locale, and set the hooks for the admin area and
+	 * Load dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
 	 * @since    1.0.0
@@ -87,7 +87,7 @@ class Polygon_Plugin {
 	/**
 	 * Load the required dependencies for the plugin.
 	 *
-	 * Include the following files that make up the plugin:
+	 * Include the files for the following classes that make up the plugin:
 	 *
 	 * - Polygon_Plugin_Loader - Orchestrates the hooks of the plugin.
 	 * - Polygon_Plugin_i18n   - Defines internationalization functionality.
