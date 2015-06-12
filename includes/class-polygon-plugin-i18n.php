@@ -3,8 +3,8 @@
 /**
  * The file that defines the class for our plugin internationalization
  *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
+ * Loads and defines the internationalization files making the plugin ready for 
+ * translation.
  *
  * @since      1.0.0
  * @package    Polygon_Plugin
@@ -13,18 +13,19 @@
 
 
 
+
 /**
  * Define the internationalization functionality.
  *
- * Load and define the internationalization files for this plugin making it ready
- * for translation.
+ * Load and define the internationalization files making the plugin it ready for
+ * translation.
  *
  * @since    1.0.0
  */
 class Polygon_Plugin_i18n {
 
 	/**
-	 * The unique identifier of this plugin.
+	 * The unique identifier of the plugin.
 	 *
 	 * @since     1.0.0
 	 * @access    protected
@@ -46,16 +47,21 @@ class Polygon_Plugin_i18n {
 
 
 
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * Make the plugin name and the plugin version from the main plugin class available
-	 * inside this class.
+	 * Make the plugin name from the main plugin class available for the current class
+	 * and define the plugin domain (slug).
+	 *
+	 * @since    1.0.0
+	 * @param    string    $plugin_name    The unique identifier of the plugin.
 	 */
 	public function __construct( $plugin_name ) {
 		$this->plugin_name = $plugin_name;
 		$this->domain      = $plugin_name;
 	}
+
 
 
 

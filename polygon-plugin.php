@@ -14,6 +14,7 @@
 
 
 
+
 /**
  * The plugin bootstrap file
  *
@@ -29,12 +30,14 @@
 
 
 
+
 /**
  * Abort if this file is called directly.
  */
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
 
 
 
@@ -50,6 +53,7 @@ define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );   // URL to plug
 
 
 
+
 /**
  * Code that runs during plugin activation.
  */
@@ -57,6 +61,7 @@ function activate_polygon_plugin() {
 	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php' );
 	Polygon_Plugin_Activator::activate();
 }
+
 
 
 
@@ -72,11 +77,13 @@ function deactivate_polygon_plugin() {
 
 
 
+
 /**
  * Register activation and deactivation hooks.
  */
 register_activation_hook( POLYGON_PLUGIN_MAIN_FILE, 'activate_polygon_plugin' );
 register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin' );
+
 
 
 

@@ -3,11 +3,13 @@
 /**
  * The file that contains the class that checks the PHP version
  *
- * A class definition that checks if the server is running outdated software.
+ * A class definition that checks if the server is running an outdated version
+ * of PHP.
  *
  * @since      1.0.0
  * @package    Polygon_Plugin
  */
+
 
 
 
@@ -18,7 +20,7 @@
  * Check if the server is running an outdated version of PHP and display a warning
  * if it is.
  *
- * @since      1.0.0
+ * @since    1.0.0
  */
 class Polygon_Plugin_Update_PHP {
 
@@ -32,12 +34,13 @@ class Polygon_Plugin_Update_PHP {
 	protected $minimum_version;
 
 
-	
+
+
 
 	/**
 	 * Set the minimum accepted version of PHP.
 	 *
-	 * Set the minimum version of PHP required to run the plugin and display the warning
+	 * Set the minimum version of PHP required to run the plugin and display a warning
 	 * if the current version is lower than the minimum version.
 	 *
 	 * @since    1.0.0
@@ -49,6 +52,7 @@ class Polygon_Plugin_Update_PHP {
 			add_action( 'admin_notices', array( $this, 'update_php_warning' ) );
 		}
 	}
+
 
 
 
@@ -74,13 +78,14 @@ class Polygon_Plugin_Update_PHP {
 
 
 
+
 	/**
 	 * Display PHP warning.
 	 *
 	 * If the server is running outdated software advise users to update their PHP
 	 * or switch to a decent host.
 	 *
-	 * @since     1.0.0
+	 * @since    1.0.0
 	 */
 	public function update_php_warning() {
 		if ( current_user_can( 'manage_options' ) ) {

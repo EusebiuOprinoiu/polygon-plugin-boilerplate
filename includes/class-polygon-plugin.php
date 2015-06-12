@@ -13,6 +13,7 @@
 
 
 
+
 /**
  * The core plugin class.
  *
@@ -38,7 +39,7 @@ class Polygon_Plugin {
 
 
 	/**
-	 * The unique identifier of this plugin.
+	 * The unique identifier of the plugin.
 	 *
 	 * @since     1.0.0
 	 * @access    protected
@@ -60,6 +61,7 @@ class Polygon_Plugin {
 
 
 
+
 	/**
 	 * Define the core functionality of the plugin.
 	 *
@@ -77,6 +79,7 @@ class Polygon_Plugin {
 		$this->set_locale();
 		$this->define_hooks();
 	}
+
 
 
 
@@ -116,6 +119,7 @@ class Polygon_Plugin {
 
 
 
+
 	/**
 	 * Define locale for internationalization.
 	 *
@@ -130,6 +134,7 @@ class Polygon_Plugin {
 
 		$this->loader->add_action( 'after_setup_theme', $plugin_i18n, 'load_plugin_textdomain' );
 	}
+
 
 
 
@@ -158,7 +163,8 @@ class Polygon_Plugin {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 	}
 
-	
+
+
 
 
 	/**
@@ -171,6 +177,7 @@ class Polygon_Plugin {
 	public function run() {
 		$this->loader->run();
 	}
+
 
 
 
@@ -190,6 +197,7 @@ class Polygon_Plugin {
 	
 
 
+
 	/**
 	 * Retreive the plugin loader.
 	 *
@@ -201,6 +209,7 @@ class Polygon_Plugin {
 	public function get_loader() {
 		return $this->loader;
 	}
+
 
 
 
