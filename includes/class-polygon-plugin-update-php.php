@@ -1,19 +1,47 @@
 <?php
 
-// Advise users to upgrade their PHP version
+/**
+ * The file that contains the class that checks the PHP version
+ *
+ * A class definition that checks if the server is running outdated software.
+ *
+ * @since      1.0.0
+ * @package    Polygon_Plugin
+ */
 
 
 
 
+/**
+ * Advise users to upgrade their PHP version.
+ *
+ * Check if the server is running an outdated version of PHP and display a warning
+ * if it is.
+ *
+ * @since      1.0.0
+ */
 class Polygon_Plugin_Update_PHP {
 
-	// Variables
-	protected $minimum_version; // Minimum required version of PHP
+	/**
+	 * Minimum required version of PHP.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string
+	 */
+	protected $minimum_version;
 
 
 	
 
-	// Construct
+	/**
+	 * Set the minimum accepted version of PHP.
+	 *
+	 * Set the minimum version of PHP required to run the plugin and display the warning
+	 * if the current version is lower than the minimum version.
+	 *
+	 * @since    1.0.0
+	 */
 	public function __construct() {
 		$this->minimum_version = '5.4';
 
@@ -25,7 +53,15 @@ class Polygon_Plugin_Update_PHP {
 
 
 
-	// Check PHP version
+	/**
+	 * Check PHP version.
+	 *
+	 * Check if the current PHP version is higher than the minimum accepted version.
+	 * If the function returns true the plugin can run without problems.
+	 *
+	 * @since     1.0.0
+	 * @return    bool
+	 */
 	public function check() {
 		if( version_compare( PHP_VERSION, $this->minimum_version ) >= 0 ) {
 			return true;
@@ -38,7 +74,14 @@ class Polygon_Plugin_Update_PHP {
 
 
 
-	// Warning
+	/**
+	 * Display PHP warning.
+	 *
+	 * Display a warning if the server is running outdated software advising the user to update
+	 * their PHP or switch to a decent host.
+	 *
+	 * @since     1.0.0
+	 */
 	public function update_php_warning() {
 		if ( current_user_can( 'manage_options' ) ) {
 			?>

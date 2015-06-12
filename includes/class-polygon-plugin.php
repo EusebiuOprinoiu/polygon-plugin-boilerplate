@@ -164,7 +164,7 @@ class Polygon_Plugin {
 	/**
 	 * Run loader and execute all hooks.
 	 *
-	 * Run the plugin loader and execute all previously registered hooks.
+	 * Run the plugin loader and execute all hooks we previously registered inside the function define_hooks().
 	 *
 	 * @since    1.0.0
 	 */

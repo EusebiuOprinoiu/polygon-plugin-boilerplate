@@ -1,13 +1,36 @@
 <?php
 
-// Class fired during plugin activation
+/**
+ * The file that defines the class fired during plugin activation
+ *
+ * A class definition that includes the functions fired during the plugin
+ * activation. It is used to create the plugin options, set their defaults and create
+ * any required database tables.
+ *
+ * @since      1.0.0
+ * @package    Polygon_Plugin
+ */
 
 
 
 
+/**
+ * Fired during plugin activation.
+ *
+ * This class defines all code necessary to run during the plugin activation.
+ *
+ * @since    1.0.0
+ */
 class Polygon_Plugin_Activator {
 
-	// Do stuff on plugin activation
+	/**
+	 * Do stuff on plugin activation.
+	 *
+	 * Create the plugin options, set their defaults and create any required database tables
+	 * on the first plugin activation.
+	 *
+	 * @since    1.0.0
+	 */
 	public static function activate() {
 		// Create plugin options if not available
 		if ( ! get_option( 'polygon_plugin' ) ) {
