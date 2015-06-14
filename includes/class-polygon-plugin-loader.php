@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The file that contains the loader class that registers all actions and filters
+ * The file that contains the loader class that registers all hooks
  *
  * @since      1.0.0
  * @package    Polygon_Plugin
