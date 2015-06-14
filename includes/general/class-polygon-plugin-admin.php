@@ -1,10 +1,7 @@
 <?php
 
 /**
- * The file that contains the class for the admin functionallity
- *
- * A class definition that includes attributes and functions used across the admin area
- * of the site.
+ * The file that contains the class for the admin functionality
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

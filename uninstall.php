@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Remove all options on uninstall
- *
- * Remove all plugin options, user meta and database tables when the plugin
- * is uninstalled. 
+ * Remove all options on uninstall 
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

@@ -1,10 +1,7 @@
 <?php
 
 /**
- * The file that defines the class for our plugin internationalization
- *
- * Loads and defines the internationalization files making the plugin ready for 
- * translation.
+ * The file that contains the class for internationalization
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

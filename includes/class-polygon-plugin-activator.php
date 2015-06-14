@@ -1,11 +1,7 @@
 <?php
 
 /**
- * The file that defines the class fired during plugin activation
- *
- * A class definition that includes the functions fired during the plugin
- * activation. It is used to create the plugin options, set their defaults and create
- * any required database tables.
+ * The file that contains the class fired during plugin activation
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

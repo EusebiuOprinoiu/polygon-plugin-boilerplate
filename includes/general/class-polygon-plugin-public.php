@@ -1,10 +1,7 @@
 <?php
 
 /**
- * The file that contains the class for the public-facing functionallity
- *
- * A class definition that includes attributes and functions used across the public-facing
- * area of the site.
+ * The file that contains the class for the public-facing functionality
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

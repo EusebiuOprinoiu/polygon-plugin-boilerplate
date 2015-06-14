@@ -3,9 +3,6 @@
 /**
  * The file that contains the class that checks for outdated software
  *
- * A class definition that checks if the server is running an outdated version
- * of PHP.
- *
  * @since      1.0.0
  * @package    Polygon_Plugin
  */

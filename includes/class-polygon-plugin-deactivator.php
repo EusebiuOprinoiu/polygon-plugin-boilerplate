@@ -1,10 +1,7 @@
 <?php
 
 /**
- * The file that defines the class fired during plugin deactivation
- *
- * A class definition that includes the functions fired during the plugin
- * deactivation.
+ * The file that contains the class fired during plugin deactivation
  *
  * @since      1.0.0
  * @package    Polygon_Plugin

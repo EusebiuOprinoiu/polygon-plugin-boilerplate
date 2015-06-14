@@ -1,10 +1,7 @@
 <?php
 
 /**
- * The file that contains the loader class 
- *
- * A class definition that registers all actions and filters with the
- * WordPress API.
+ * The file that contains the loader class that registers all actions and filters
  *
  * @since      1.0.0
  * @package    Polygon_Plugin
