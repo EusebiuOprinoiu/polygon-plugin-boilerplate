@@ -107,10 +107,10 @@ class Polygon_Plugin_Admin {
 	 */
 	public function load_update_checker() {
 		include_once( POLYGON_PLUGIN_DIR_PATH . 'includes/third-party/update-checker/plugin-update-checker.php' );
-		$update_checker = PucFactory::buildUpdateChecker( 
+		$update_checker = PucFactory::buildUpdateChecker(
 			'https://polygonthemes.com/update-server/?action=get_metadata&slug=polygon-plugin',
-			POLYGON_PLUGIN_MAIN_FILE, 
-			'polygon-plugin' 
+			POLYGON_PLUGIN_MAIN_FILE,
+			'polygon-plugin'
 		);
 	}
 
@@ -122,7 +122,7 @@ class Polygon_Plugin_Admin {
 	 * Migrate and update options on plugin updates.
 	 *
 	 * Compare the current plugin version with the one stored in the options table
-	 * and migrate recursively if needed after a plugin update. The migration code for each 
+	 * and migrate recursively if needed after a plugin update. The migration code for each
 	 * version is stored in individual files and it's triggered only if the 'last-updated-version'
 	 * parameter is older than versions where changes have been made.
 	 *
@@ -134,15 +134,15 @@ class Polygon_Plugin_Admin {
 		if ( version_compare( $this->version, $polygon_plugin['plugin-version'] ) > 0 ) {
 			/*
 			// Migrate options to version 1.1.0
-			if ( version_compare( $polygon_plugin['last-updated-version'], '0.5.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.1.0.php' );
-				$polygon_plugin['last-updated-version'] = '0.5.0';
+				$polygon_plugin['last-updated-version'] = '1.1.0';
 			}
 
 			// Migrate options to version 1.2.0
-			if ( version_compare( $polygon_plugin['last-updated-version'], '1.0.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['last-updated-version'], '1.2.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.2.0.php' );
-				$polygon_plugin['last-updated-version'] = '1.0.0';
+				$polygon_plugin['last-updated-version'] = '1.2.0';
 			}
 			*/
 
