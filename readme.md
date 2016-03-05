@@ -4,7 +4,7 @@ Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundat
 
 ## New Project
 
-In order to start a new project all you need to do is clone this repository and replace all strings using the format below. Make sure your searches are case-sensitive.
+In order to start a new project all you need to do is clone this repository, rename files to reflect the plugin name and replace all strings using the format below. Make sure your searches are case-sensitive.
 - polygon plugin
 - Polygon Plugin
 - polygon-plugin
