@@ -1,5 +1,5 @@
 === Polygon Plugin ===
-Contributors: EusebiuOprinoiu
+Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
 Requires at least: 3.5
 Tested up to: 4.2.2
@@ -11,7 +11,7 @@ Short description of your awesome plugin
 
 Long description of your awesome plugin. Markdown format supported.
 
-Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The curent version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
+Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The current version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
 
 = Subheading 01 =
 
