@@ -33,7 +33,7 @@ class Polygon_Plugin_Update_PHP {
 
 
 	/**
-	 * Recommended required version of PHP.
+	 * Minimum recommended version of PHP.
 	 *
 	 * @since    1.0.0
 	 * @access   protected
@@ -48,7 +48,7 @@ class Polygon_Plugin_Update_PHP {
 	/**
 	 * Set the minimum and recommended versions of PHP.
 	 *
-	 * Set the minimum version of PHP required to run the plugin, the recommended version
+	 * Set the minimum version of PHP required to run the plugin, the minimum recommended version
 	 * and display a warning if the current version is lower than the minimum version.
 	 *
 	 * @since    1.0.0
