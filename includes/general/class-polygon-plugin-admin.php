@@ -1,10 +1,9 @@
 <?php
-
 /**
  * The file that contains the class for the admin functionality
  *
- * @since      1.0.0
- * @package    Polygon_Plugin
+ * @since   1.0.0
+ * @package Polygon_Plugin
  */
 
 
@@ -17,16 +16,16 @@
  * Defines the plugin name and version, enqueue stylesheets and javascript for the admin area,
  * load the library for automatic updates and migrate options on plugin updates.
  *
- * @since    1.0.0
+ * @since 1.0.0
  */
 class Polygon_Plugin_Admin {
 
 	/**
 	 * The unique identifier of the plugin.
 	 *
-	 * @since     1.0.0
-	 * @access    protected
-	 * @var       string
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
 	 */
 	private $plugin_name;
 
@@ -35,9 +34,9 @@ class Polygon_Plugin_Admin {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since     1.0.0
-	 * @access    protected
-	 * @var       string
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
 	 */
 	private $version;
 
@@ -51,9 +50,9 @@ class Polygon_Plugin_Admin {
 	 * Make the plugin name and the plugin version from the main plugin class available
 	 * for the current class.
 	 *
-	 * @since    1.0.0
-	 * @param    string    $plugin_name    The unique identifier of the plugin.
-	 * @param    string    $version        The current version of the plugin.
+	 * @since 1.0.0
+	 * @param string $plugin_name The unique identifier of the plugin.
+	 * @param string $version     The current version of the plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
@@ -69,10 +68,10 @@ class Polygon_Plugin_Admin {
 	 *
 	 * Register and enqueue stylesheets for the admin area of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_styles() {
-		// Enqueue styles
+		// Enqueue styles.
 	}
 
 
@@ -84,10 +83,10 @@ class Polygon_Plugin_Admin {
 	 *
 	 * Register and enqueue javascript for the admin area of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
-		// Enqueue scripts
+		// Enqueue scripts.
 	}
 
 
@@ -101,9 +100,9 @@ class Polygon_Plugin_Admin {
 	 * notofications and one-click upgrades to our plugin. The script uses a JSON file
 	 * generated on the fly by the WP Update Server script.
 	 *
-	 * @since    1.0.0
-	 * @link     https://github.com/YahnisElsts/plugin-update-checker
-	 * @link     https://github.com/YahnisElsts/wp-update-server
+	 * @since 1.0.0
+	 * @link  https://github.com/YahnisElsts/plugin-update-checker
+	 * @link  https://github.com/YahnisElsts/wp-update-server
 	 */
 	public function load_update_checker() {
 		include_once( POLYGON_PLUGIN_DIR_PATH . 'includes/third-party/update-checker/plugin-update-checker.php' );
@@ -126,7 +125,7 @@ class Polygon_Plugin_Admin {
 	 * version is stored in individual files and it's triggered only if the 'last-updated-version'
 	 * parameter is older than versions where changes have been made.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function maybe_update() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
@@ -148,12 +147,11 @@ class Polygon_Plugin_Admin {
 
 
 
-			// Update plugin version
+			// Update plugin version.
 			$polygon_plugin['plugin-version'] = $this->version;
 
-			// Update plugin options
+			// Update plugin options.
 			update_option( 'polygon_plugin', $polygon_plugin );
 		}
 	}
-
 }

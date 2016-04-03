@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Remove all options on uninstall
  *
- * @since      1.0.0
- * @package    Polygon_Plugin
+ * @since   1.0.0
+ * @package Polygon_Plugin
  */
 
 
@@ -26,14 +25,14 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  * Remove plugin options.
  */
 if ( is_multisite() ) {
-	// Global variables
+	// Global variables.
 	global $wpdb;
 
-	// Variables
+	// Variables.
 	$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
 
 	if ( $blogs ) {
-		foreach( $blogs as $blog ) {
+		foreach ( $blogs as $blog ) {
 			switch_to_blog( $blog['blog_id'] );
 
 			delete_option( 'polygon_plugin' );

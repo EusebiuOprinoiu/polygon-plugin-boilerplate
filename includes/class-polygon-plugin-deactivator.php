@@ -1,10 +1,9 @@
 <?php
-
 /**
  * The file that contains the class fired during plugin deactivation
  *
- * @since      1.0.0
- * @package    Polygon_Plugin
+ * @since   1.0.0
+ * @package Polygon_Plugin
  */
 
 
@@ -16,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin deactivation.
  *
- * @since    1.0.0
+ * @since 1.0.0
  */
 class Polygon_Plugin_Deactivator {
 
@@ -25,10 +24,9 @@ class Polygon_Plugin_Deactivator {
 	 *
 	 * Long description goes here.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public static function deactivate() {
-		// Do something
+		// Do something.
 	}
-	
 }

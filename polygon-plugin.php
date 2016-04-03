@@ -23,8 +23,8 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @since      1.0.0
- * @package    Polygon_Plugin
+ * @since   1.0.0
+ * @package Polygon_Plugin
  */
 
 
@@ -42,13 +42,13 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 
-/** 
+/**
  * Define plugin constants.
  */
-define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                      // Current plugin version
-define( 'POLYGON_PLUGIN_MAIN_FILE', __FILE__ );                   // Path to main plugin file
-define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) ); // Path to plugin directory
-define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );   // URL to plugin directory
+define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                         // Current plugin version.
+define( 'POLYGON_PLUGIN_MAIN_FILE', __FILE__ );                      // Path to main plugin file.
+define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
+define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
 
 
 
@@ -91,10 +91,10 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
 /**
  * Load and execute plugin.
  *
- * Begin execution of the plugin if the server is not running an outdated version of PHP 
+ * Begin execution of the plugin if the server is not running an outdated version of PHP
  * or display a warning otherwise.
  *
- * @since    1.0.0
+ * @since 1.0.0
  */
 function run_polygon_plugin() {
 	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-update-php.php' );
