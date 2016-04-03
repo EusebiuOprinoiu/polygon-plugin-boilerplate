@@ -132,13 +132,13 @@ class Polygon_Plugin_Admin {
 
 		if ( version_compare( $this->version, $polygon_plugin['plugin-version'] ) > 0 ) {
 			/*
-			// Migrate options to version 1.1.0
+			// Migrate options to version 1.1.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.1.0.php' );
 				$polygon_plugin['last-updated-version'] = '1.1.0';
 			}
 
-			// Migrate options to version 1.2.0
+			// Migrate options to version 1.2.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.2.0' ) < 0 ) {
 				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.2.0.php' );
 				$polygon_plugin['last-updated-version'] = '1.2.0';
