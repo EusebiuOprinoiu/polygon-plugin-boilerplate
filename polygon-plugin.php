@@ -2,26 +2,17 @@
 /**
  * Plugin Name: Polygon Plugin Boilerplate
  * Plugin URI: https://polygonthemes.com
- * Description: Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The curent version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
+ * Description: Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
  * Version: 1.0.0
  * Author: Polygon Themes
  * Author URI: https://polygonthemes.com
  * Text Domain: polygon-plugin
  * Domain Path: /languages/
  * License: GNU General Public License version 3.0
- */
-
-
-
-
-
-/**
- * The plugin bootstrap file
  *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
+ * This is the bootstrap file read by WordPress that generates the information displayed
+ * in the admin area. It also includes al dependencies used by the plugin, it registers
+ * the activation and deactivation hooks and it defines a function that starts the plugin.
  *
  * @since   1.0.0
  * @package Polygon_Plugin
