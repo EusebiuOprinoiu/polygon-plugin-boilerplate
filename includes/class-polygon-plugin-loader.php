@@ -30,8 +30,6 @@ class Polygon_Plugin_Loader {
 	 */
 	protected $actions;
 
-
-
 	/**
 	 * The array of filters registered with WordPress.
 	 *

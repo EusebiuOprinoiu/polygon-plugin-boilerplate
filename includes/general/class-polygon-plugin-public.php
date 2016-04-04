@@ -29,8 +29,6 @@ class Polygon_Plugin_Public {
 	 */
 	private $plugin_name;
 
-
-
 	/**
 	 * The current version of the plugin.
 	 *

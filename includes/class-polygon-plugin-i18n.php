@@ -29,8 +29,6 @@ class Polygon_Plugin_i18n {
 	 */
 	private $plugin_name;
 
-
-
 	/**
 	 * The active plugin text-domain.
 	 *

@@ -29,8 +29,6 @@ class Polygon_Plugin_Update_PHP {
 	 */
 	protected $minimum_version;
 
-
-
 	/**
 	 * Minimum recommended version of PHP.
 	 *

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Polygon Plugin Boilerplate\n"
-"POT-Creation-Date: 2016-04-03 16:31+0300\n"
+"POT-Creation-Date: 2016-04-04 13:49+0300\n"
 "PO-Revision-Date: 2015-06-14 18:51+0200\n"
 "Last-Translator: Eusebiu Oprinoiu <eusebiu.websites@outlook.com>\n"
 "Language-Team: Polygon Themes\n"
@@ -19,18 +19,18 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: includes/third-party\n"
 
-#: includes/class-polygon-plugin-update-php.php:102
+#: includes/class-polygon-plugin-update-php.php:100
 msgid "WARNING: You server is running outdated software!"
 msgstr ""
 
-#: includes/class-polygon-plugin-update-php.php:105
+#: includes/class-polygon-plugin-update-php.php:103
 #, php-format
 msgid ""
 "Polygon Plugin can not run on PHP versions older than %1$s. You are running "
 "on version %2$s which has serious security and performance issues."
 msgstr ""
 
-#: includes/class-polygon-plugin-update-php.php:107
+#: includes/class-polygon-plugin-update-php.php:105
 #, php-format
 msgid ""
 "Please ask your hosting provider to help you upgrade. We recommend PHP %1$s "

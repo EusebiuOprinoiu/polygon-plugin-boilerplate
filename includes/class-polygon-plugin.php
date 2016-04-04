@@ -32,8 +32,6 @@ class Polygon_Plugin {
 	 */
 	protected $loader;
 
-
-
 	/**
 	 * The unique identifier of the plugin.
 	 *
@@ -42,8 +40,6 @@ class Polygon_Plugin {
 	 * @var    string
 	 */
 	protected $plugin_name;
-
-
 
 	/**
 	 * The current version of the plugin.
