@@ -13,8 +13,8 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * Defines the plugin name and version, enqueue stylesheets and javascript for the admin area,
- * load the library for automatic updates and migrate options on plugin updates.
+ * Defines the plugin name and version, enqueue stylesheets and javascript for the admin area
+ * and migrate options on plugin updates.
  *
  * @since 1.0.0
  */
@@ -85,30 +85,6 @@ class Polygon_Plugin_Admin {
 	 */
 	public function enqueue_scripts() {
 		// Enqueue scripts.
-	}
-
-
-
-
-
-	/**
-	 * Enable automatic updates.
-	 *
-	 * Load the Plugin Update Checker library that lets us add automatic update
-	 * notofications and one-click upgrades to our plugin. The script uses a JSON file
-	 * generated on the fly by the WP Update Server script.
-	 *
-	 * @since 1.0.0
-	 * @link  https://github.com/YahnisElsts/plugin-update-checker
-	 * @link  https://github.com/YahnisElsts/wp-update-server
-	 */
-	public function load_update_checker() {
-		include_once( POLYGON_PLUGIN_DIR_PATH . 'includes/third-party/update-checker/plugin-update-checker.php' );
-		$update_checker = PucFactory::buildUpdateChecker(
-			'https://polygonthemes.com/update-server/?action=get_metadata&slug=polygon-plugin',
-			POLYGON_PLUGIN_MAIN_FILE,
-			'polygon-plugin'
-		);
 	}
 
 
