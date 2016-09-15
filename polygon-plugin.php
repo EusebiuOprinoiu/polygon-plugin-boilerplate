@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Polygon Plugin Boilerplate
  * Plugin URI: https://polygonthemes.com
- * Description: Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
+ * Description: Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress plugins. Based on the original work of Tom McFarlin.
  * Version: 1.0.0
  * Author: Polygon Themes
  * Author URI: https://polygonthemes.com
