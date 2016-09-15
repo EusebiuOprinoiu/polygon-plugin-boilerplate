@@ -36,11 +36,9 @@ if ( is_multisite() ) {
 			switch_to_blog( $blog['blog_id'] );
 
 			delete_option( 'polygon_plugin' );
-			delete_option( 'external_updates-polygon-plugin' );
 		}
 		restore_current_blog();
 	}
 } else {
 	delete_option( 'polygon_plugin' );
-	delete_option( 'external_updates-polygon-plugin' );
 }
