@@ -1,4 +1,4 @@
-## Changelog history
+## Changelog History
 
 #### Version 1.0.0
 - First release
