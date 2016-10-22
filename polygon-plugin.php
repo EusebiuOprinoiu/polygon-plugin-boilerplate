@@ -50,7 +50,7 @@ define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to p
 /**
  * Activate Polygon Plugin.
  *
- * Code that runs during plugin activation.
+ * Code that runs during the plugin activation.
  *
  * @since 1.0.0
  * @param bool $network_wide Boolean value with the network-wide activation status.
@@ -67,7 +67,7 @@ function activate_polygon_plugin( $network_wide ) {
 /**
  * Deactivate Polygon Plugin.
  *
- * Code that runs during plugin deactivation.
+ * Code that runs during the plugin deactivation.
  *
  * @since 1.0.0
  * @param bool $network_wide Boolean value with the network-wide activation status.
