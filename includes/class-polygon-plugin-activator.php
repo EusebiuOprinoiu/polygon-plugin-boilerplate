@@ -89,20 +89,5 @@ class Polygon_Plugin_Activator {
 
 			add_option( 'polygon_plugin', $polygon_plugin );
 		}
-
-
-
-		// Get option values.
-		$polygon_plugin = get_option( 'polygon_plugin' );
-
-
-
-		// Set option values on every plugin activation.
-		// $polygon_plugin['key-id'] = 'value';
-
-
-
-		// Update option values.
-		update_option( 'polygon_plugin', $polygon_plugin );
 	}
 }
