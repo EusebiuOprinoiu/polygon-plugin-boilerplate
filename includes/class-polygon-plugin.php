@@ -49,7 +49,7 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Load the required dependencies for the plugin.
+	 * Load the required dependencies.
 	 *
 	 * Include the files for the following classes that make up the plugin:
 	 *
@@ -147,9 +147,9 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Retreive the plugin loader.
+	 * Retrieve the plugin loader.
 	 *
-	 * Retreive the object containing all hooks registered by our plugin.
+	 * Retrieve the object containing all hooks registered by our plugin.
 	 *
 	 * @since  1.0.0
 	 * @return object
@@ -163,9 +163,9 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Retreive the plugin name.
+	 * Retrieve the plugin name.
 	 *
-	 * Retreive the unique identifier of our plugin (slug) and return it as a string.
+	 * Retrieve the unique identifier of our plugin (slug) and return it as a string.
 	 *
 	 * @since  1.0.0
 	 * @return string
@@ -179,9 +179,9 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Retreive the plugin version.
+	 * Retrieve the plugin version.
 	 *
-	 * Retreive the version of our plugin and return it as a string.
+	 * Retrieve the version of our plugin and return it as a string.
 	 *
 	 * @since  1.0.0
 	 * @return string

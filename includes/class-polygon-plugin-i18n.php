@@ -13,7 +13,7 @@
 /**
  * Define the internationalization functionality.
  *
- * Load and define the internationalization files making the plugin it ready for
+ * Load and define the internationalization files making the plugin ready for
  * translation.
  *
  * @since 1.0.0
