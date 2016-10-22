@@ -16,9 +16,6 @@
  * This is used to define internationalization, admin-specific hooks, and
  * public-facing site hooks.
  *
- * Also maintains the unique identifier of this plugin as well as the current
- * version of the plugin.
- *
  * @since 1.0.0
  */
 class Polygon_Plugin {
@@ -32,41 +29,16 @@ class Polygon_Plugin {
 	 */
 	protected $loader;
 
-	/**
-	 * The unique identifier of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $plugin_name;
-
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $version;
-
 
 
 
 
 	/**
-	 * Define the core functionality of the plugin.
-	 *
-	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load dependencies, define the locale, and set the hooks for the admin area and
-	 * the public-facing side of the site.
+	 * Initialize the class and get things started.
 	 *
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->plugin_name = 'polygon-plugin';
-		$this->version     = POLYGON_PLUGIN_VERSION;
-
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_hooks();
@@ -122,7 +94,7 @@ class Polygon_Plugin {
 	 * @access private
 	 */
 	private function set_locale() {
-		$plugin_i18n = new Polygon_Plugin_i18n( $this->get_plugin_name() );
+		$plugin_i18n = new Polygon_Plugin_i18n();
 
 		$this->loader->add_action( 'after_setup_theme', $plugin_i18n, 'load_plugin_textdomain' );
 	}
@@ -141,13 +113,14 @@ class Polygon_Plugin {
 	 */
 	private function define_hooks() {
 		// Create objects from classes.
-		$plugin_admin  = new Polygon_Plugin_Admin( $this->get_plugin_name(), $this->get_version() );
-		$plugin_public = new Polygon_Plugin_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin  = new Polygon_Plugin_Admin();
+		$plugin_public = new Polygon_Plugin_Public();
 
 		// Register admin hooks.
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'maybe_update' );
+		$this->loader->add_action( 'wpmu_new_blog', $plugin_admin, 'maybe_activate', 10, 6 );
 
 		// Register public hooks.
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
@@ -174,22 +147,6 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Retreive the plugin name.
-	 *
-	 * Retreive the unique identifier of our plugin (slug) and return it as a string.
-	 *
-	 * @since  1.0.0
-	 * @return string
-	 */
-	public function get_plugin_name() {
-		return $this->plugin_name;
-	}
-
-
-
-
-
-	/**
 	 * Retreive the plugin loader.
 	 *
 	 * Retreive the object containing all hooks registered by our plugin.
@@ -206,6 +163,22 @@ class Polygon_Plugin {
 
 
 	/**
+	 * Retreive the plugin name.
+	 *
+	 * Retreive the unique identifier of our plugin (slug) and return it as a string.
+	 *
+	 * @since  1.0.0
+	 * @return string
+	 */
+	public function get_plugin_name() {
+		return POLYGON_PLUGIN_NAME;
+	}
+
+
+
+
+
+	/**
 	 * Retreive the plugin version.
 	 *
 	 * Retreive the version of our plugin and return it as a string.
@@ -214,6 +187,6 @@ class Polygon_Plugin {
 	 * @return string
 	 */
 	public function get_version() {
-		return $this->version;
+		return POLYGON_PLUGIN_VERSION;
 	}
 }

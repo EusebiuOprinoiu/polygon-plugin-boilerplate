@@ -20,13 +20,64 @@
 class Polygon_Plugin_Deactivator {
 
 	/**
+	 * Initialize the class and get things started.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __construct() {
+		// Nothing yet.
+	}
+
+
+
+
+
+	/**
+	 * Run the deactivation script.
+	 *
+	 * Run the deactivation script for the current site or for all sites if we are on
+	 * WordPress Multisite and the plugin is network activated.
+	 *
+	 * @since 1.0.0
+	 * @param bool $network_wide Boolean value with the network-wide activation status.
+	 */
+	public static function deactivate( $network_wide = false ) {
+		if ( is_multisite() ) {
+			if ( $network_wide ) {
+				// Global variables.
+				global $wpdb;
+
+				// Variables.
+				$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
+
+				if ( $blogs ) {
+					foreach ( $blogs as $blog ) {
+						switch_to_blog( $blog['blog_id'] );
+
+						Polygon_Plugin_Deactivator::run_deactivation_script();
+					}
+					restore_current_blog();
+				}
+			} else {
+				Polygon_Plugin_Deactivator::run_deactivation_script();
+			}
+		} else {
+			Polygon_Plugin_Deactivator::run_deactivation_script();
+		}
+	}
+
+
+
+
+
+	/**
 	 * Do stuff on plugin deactivation.
 	 *
 	 * Long description goes here.
 	 *
 	 * @since 1.0.0
 	 */
-	public static function deactivate() {
+	public static function run_deactivation_script() {
 		// Do something.
 	}
 }

@@ -13,48 +13,20 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * Defines the plugin name and version, enqueue stylesheets and javascript for the admin area
- * and migrate options on plugin updates.
+ * This class is responsable for maintaining all the functions required
+ * for the admin-specific tasks.
  *
  * @since 1.0.0
  */
 class Polygon_Plugin_Admin {
 
 	/**
-	 * The unique identifier of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	private $plugin_name;
-
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	private $version;
-
-
-
-
-
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * Make the plugin name and the plugin version from the main plugin class available
-	 * for the current class.
+	 * Initialize the class and get things started.
 	 *
 	 * @since 1.0.0
-	 * @param string $plugin_name The unique identifier of the plugin.
-	 * @param string $version     The current version of the plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
-		$this->plugin_name = $plugin_name;
-		$this->version     = $version;
+	public function __construct() {
+		// Nothing yet.
 	}
 
 
@@ -104,17 +76,27 @@ class Polygon_Plugin_Admin {
 	public function maybe_update() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
-		if ( version_compare( $this->version, $polygon_plugin['plugin-version'] ) > 0 ) {
+		if ( ! isset( $polygon_plugin['plugin-version'] ) ) {
+			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
+			update_option( 'polygon_plugin', $polygon_plugin );
+		}
+
+		if ( ! isset( $polygon_plugin['last-updated-version'] ) ) {
+			$polygon_plugin['last-updated-version'] = POLYGON_PLUGIN_VERSION;
+			update_option( 'polygon_plugin', $polygon_plugin );
+		}
+
+		if ( version_compare( POLYGON_PLUGIN_VERSION, $polygon_plugin['plugin-version'] ) > 0 ) {
 			/*
 			// Migrate options to version 1.1.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
-				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.1.0.php' );
+				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.1.0.php' );
 				$polygon_plugin['last-updated-version'] = '1.1.0';
 			}
 
 			// Migrate options to version 1.2.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.2.0' ) < 0 ) {
-				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/partials/migrate-to-version-1.2.0.php' );
+				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.2.0.php' );
 				$polygon_plugin['last-updated-version'] = '1.2.0';
 			}
 			*/
@@ -122,10 +104,41 @@ class Polygon_Plugin_Admin {
 
 
 			// Update plugin version.
-			$polygon_plugin['plugin-version'] = $this->version;
+			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
 
 			// Update plugin options.
 			update_option( 'polygon_plugin', $polygon_plugin );
+		}
+	}
+
+
+
+
+
+	/**
+	 * Run activation script for new sites.
+	 *
+	 * If we are running WordPress Multisite and our plugin is network activated,
+	 * run the activation script every time a new site is created.
+	 *
+	 * @since 1.0.0
+	 * @param int    $blog_id Blog ID of the created blog. Optional.
+	 * @param int    $user_id User ID of the user creating the blog. Required.
+	 * @param string $domain  Domain used for the new blog. Optional.
+	 * @param string $path    Path to the new blog. Optional.
+	 * @param int    $site_id Site ID. Only relevant on multi-network installs. Optional.
+	 * @param array  $meta    Meta data. Used to set initial site options. Optional.
+	 */
+	public function maybe_activate( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+		if ( $blog_id ) {
+			if ( is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) ) ) {
+				switch_to_blog( $blog_id );
+
+				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php' );
+				Polygon_Plugin_Activator::run_activation_script();
+
+				restore_current_blog();
+			}
 		}
 	}
 }

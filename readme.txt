@@ -2,7 +2,7 @@
 Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
 Requires at least: 3.5
-Tested up to: 4.2.2
+Tested up to: 4.7
 License: GNU General Public License version 3.0
 
 Short description of your awesome plugin
@@ -13,15 +13,18 @@ Long description of your awesome plugin. Markdown format supported.
 
 Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The current version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
 
-= Subheading 01 =
+== Installation ==
 
-* First item
-* Second item
+1. Upload polygon-plugin to the /wp-content/plugins/ directory
+2. Activate Polygon Plugin through the 'Plugins' menu from the WordPress dashboard
 
-= Subheading 02 =
+== Frequently Asked Questions ==
 
-* First item
-* Second item
+No questions added yet! :(
+
+== Screenshots ==
+
+No screenshots added yet! :(
 
 == Changelog ==
 

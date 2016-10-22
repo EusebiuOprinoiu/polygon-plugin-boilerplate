@@ -13,48 +13,19 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name and version and enqueue stylesheets and javascript for the
- * frontend.
+ * This class is responsable for maintaining all the functions required for the front-end.
  *
  * @since 1.0.0
  */
 class Polygon_Plugin_Public {
 
 	/**
-	 * The unique identifier of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	private $plugin_name;
-
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	private $version;
-
-
-
-
-
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * Make the plugin name and the plugin version from the main plugin class available
-	 * for the current class.
+	 * Initialize the class and get things started.
 	 *
 	 * @since 1.0.0
-	 * @param string $plugin_name The unique identifier of the plugin.
-	 * @param string $version     The current version of the plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
-		$this->plugin_name = $plugin_name;
-		$this->version     = $version;
+	public function __construct() {
+		// Nothing yet.
 	}
 
 
