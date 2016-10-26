@@ -1,7 +1,7 @@
 # Polygon Plugin
 Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
-Requires at least: 3.5
+Requires at least: 4.0
 Tested up to: 4.7
 License: GNU General Public License version 3.0
 
