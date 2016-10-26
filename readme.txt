@@ -5,7 +5,7 @@ Requires at least: 4.0
 Tested up to: 4.7
 License: GNU General Public License version 3.0
 
-Short description of your awesome plugin
+Short description of your awesome plugin.
 
 ## Description
 
