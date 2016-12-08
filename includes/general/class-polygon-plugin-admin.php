@@ -38,8 +38,9 @@ class Polygon_Plugin_Admin {
 	 * Register and enqueue stylesheets for the admin area.
 	 *
 	 * @since 1.0.0
+	 * @param string $hook Hook name for the current admin page.
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles( $hook ) {
 		// Enqueue styles.
 	}
 
@@ -53,8 +54,9 @@ class Polygon_Plugin_Admin {
 	 * Register and enqueue javascript for the admin area.
 	 *
 	 * @since 1.0.0
+	 * @param string $hook Hook name for the current admin page.
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook ) {
 		// Enqueue scripts.
 	}
 
