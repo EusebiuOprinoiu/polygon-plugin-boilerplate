@@ -15,14 +15,24 @@ Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundat
 
 ## Installation
 
-### Automatic Installation
+### Automatic Installation ( WP Repository )
 
-The automatic installation is the easiest option to install a plugin as WordPress handles the file transfers itself and you don't need to leave your browser. To do an automatic install, log in to your WordPress dashboard and follow the steps below:
+The automatic installation is the easiest option to install a plugin as WordPress handles the file transfers itself. To do an automatic install, log in to your WordPress dashboard and follow the steps below:
 
 1. Navigate to the Plugins menu and click "Add New"
 2. In the search field type "Polygon Plugin" and click "Search Plugins"
 3. Once you have found the plugin install it by clicking "Install Now"
 4. Activate "Polygon Plugin" from the "Plugins" menu
+
+### Automatic Installation ( Self-Hosted )
+
+The automatic installation is the easiest option to install a plugin as WordPress handles the file transfers itself. To do an automatic install, log in to your WordPress dashboard and follow the steps below:
+
+1. Download the plugin to your local computer
+2. Navigate to the Plugins menu and click "Add New"
+3. Click "Upload Plugin" and select the zip file downloaded earlier
+4. Install the plugin by clicking "Install Now"
+5. Activate "Polygon Plugin" from the "Plugins" menu
 
 ### Manual Installation
 
