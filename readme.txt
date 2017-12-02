@@ -2,7 +2,7 @@
 Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.9
 License: GNU General Public License version 3.0
 
 Short description of your awesome plugin.
