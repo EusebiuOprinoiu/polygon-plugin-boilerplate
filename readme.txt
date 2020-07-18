@@ -1,9 +1,13 @@
 # Polygon Plugin
 Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
-Requires at least: 4.5
-Tested up to: 5.0
-License: GNU General Public License version 3.0
+Stable tag: trunk
+Requires PHP: 7.2
+Tested up to: 5.4
+Requires at least: 5.0
+License: GPLv3 or later
+License URI: https://choosealicense.com/licenses/gpl-3.0
+Donate link: https://paypal.me/EusebiuOprinoiu
 
 Short description of your awesome plugin.
 

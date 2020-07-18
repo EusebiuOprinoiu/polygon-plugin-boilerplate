@@ -55,15 +55,15 @@ class Polygon_Plugin_Deactivator {
 					foreach ( $blogs as $blog ) {
 						switch_to_blog( $blog['blog_id'] );
 
-						Polygon_Plugin_Deactivator::run_deactivation_script();
+						self::run_deactivation_script();
 					}
 					restore_current_blog();
 				}
 			} else {
-				Polygon_Plugin_Deactivator::run_deactivation_script();
+				self::run_deactivation_script();
 			}
 		} else {
-			Polygon_Plugin_Deactivator::run_deactivation_script();
+			self::run_deactivation_script();
 		}
 	}
 

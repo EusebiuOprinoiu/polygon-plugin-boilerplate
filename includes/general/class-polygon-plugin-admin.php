@@ -91,13 +91,13 @@ class Polygon_Plugin_Admin {
 			/*
 			// Migrate options to version 1.1.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
-				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.1.0.php' );
+				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.1.0.php';
 				$polygon_plugin['last-updated-version'] = '1.1.0';
 			}
 
 			// Migrate options to version 1.2.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.2.0' ) < 0 ) {
-				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.2.0.php' );
+				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.2.0.php';
 				$polygon_plugin['last-updated-version'] = '1.2.0';
 			}
 			*/
@@ -135,7 +135,7 @@ class Polygon_Plugin_Admin {
 			if ( is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) ) ) {
 				switch_to_blog( $blog_id );
 
-				require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php' );
+				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php';
 				Polygon_Plugin_Activator::run_activation_script();
 
 				restore_current_blog();

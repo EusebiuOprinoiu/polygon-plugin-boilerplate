@@ -2,7 +2,7 @@
 
 Polygon Plugin is distributed under the terms of GPL
 
-License: [GNU General Public License version 3.0](http://www.gnu.org/licenses/gpl-3.0.html)
+License: [GPLv3 or later](https://choosealicense.com/licenses/gpl-3.0)
 
 #### GPL-Compatible Assets
 

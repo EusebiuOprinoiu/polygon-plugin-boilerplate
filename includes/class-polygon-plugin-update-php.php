@@ -51,8 +51,8 @@ class Polygon_Plugin_Update_PHP {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->minimum_version     = '5.3';
-		$this->recommended_version = '7.2';
+		$this->minimum_version     = '7.2';
+		$this->recommended_version = '7.4';
 
 		if ( ! $this->check() ) {
 			add_action( 'admin_notices', array( $this, 'update_php_warning' ) );
@@ -100,7 +100,7 @@ class Polygon_Plugin_Update_PHP {
 						<b><?php echo esc_html__( 'WARNING: You server is running outdated software!', 'polygon-plugin' ); ?></b>
 					</p>
 					<p>
-						<?php printf( esc_html__( 'Polygon Plugin can not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION ); ?>
+						<?php printf( esc_html__( 'Polygon Plugin will not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION ); ?>
 						<br>
 						<?php printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'polygon-plugin' ), $this->recommended_version ); ?>
 					</p>

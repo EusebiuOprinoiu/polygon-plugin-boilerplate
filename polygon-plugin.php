@@ -1,18 +1,27 @@
 <?php
 /**
- * Plugin Name: Polygon Plugin Boilerplate
- * Plugin URI: https://polygonthemes.com
- * Description: Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress plugins. Based on the original work of Tom McFarlin.
- * Version: 1.0.0
- * Author: Polygon Themes
- * Author URI: https://polygonthemes.com
- * Text Domain: polygon-plugin
- * Domain Path: /languages/
- * License: GNU General Public License version 3.0
+ * Plugin Name:       Polygon Plugin Boilerplate
+ * Plugin URI:        https://polygonthemes.com
+ * Author:            Polygon Themes
+ * Author URI:        https://polygonthemes.com
+ * Description:       Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress plugins. Based on the original work of Tom McFarlin.
+ * Version:           1.0.0
+ * Requires PHP:      7.2
+ * Requires at least: 5.0
  *
- * This is the bootstrap file read by WordPress that generates the information displayed
- * in the admin area. It also includes al dependencies used by the plugin, it registers
- * the activation and deactivation hooks and it defines a function that starts the plugin.
+ * Text Domain:       polygon-plugin
+ * Domain Path:       /languages/
+ *
+ * License:           GPLv3 or later
+ * License URI:       https://choosealicense.com/licenses/gpl-3.0
+ *
+ * This program is free software.
+ * You can redistribute it and/or modify it under the terms of GNU General Public License,
+ * as published by the Free Software Foundation, either version 3 of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+ * Without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * For more details, see the GNU General Public License.
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -56,7 +65,7 @@ define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to p
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function activate_polygon_plugin( $network_wide ) {
-	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php' );
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php';
 	Polygon_Plugin_Activator::activate( $network_wide );
 }
 
@@ -73,7 +82,7 @@ function activate_polygon_plugin( $network_wide ) {
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function deactivate_polygon_plugin( $network_wide ) {
-	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php' );
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php';
 	Polygon_Plugin_Deactivator::deactivate( $network_wide );
 }
 
@@ -100,11 +109,11 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
  * @since 1.0.0
  */
 function run_polygon_plugin() {
-	require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-update-php.php' );
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-update-php.php';
 	$php = new Polygon_Plugin_Update_PHP();
 
 	if ( $php->check() ) {
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php' );
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php';
 		$plugin = new Polygon_Plugin();
 		$plugin->run();
 	}

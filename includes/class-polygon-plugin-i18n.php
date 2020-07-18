@@ -38,7 +38,7 @@ class Polygon_Plugin_i18n {
 	 *
 	 * Load the plugin text-domain for translation from:
 	 *
-	 * - Global languages folder: wp-content/languages/plugins/polygon-plugin/polygon-plugin-en_US.mo
+	 * - Global languages folder: wp-content/languages/plugins/polygon-plugin-en_US.mo
 	 * - Local languages folder: wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
 	 *
 	 * If no files are found in the global languages folder the plugin uses the files available in the
@@ -50,7 +50,7 @@ class Polygon_Plugin_i18n {
 		$locale = apply_filters( 'locale', get_locale(), POLYGON_PLUGIN_NAME );
 
 		// Load textdomain from the global languages folder.
-		load_textdomain( POLYGON_PLUGIN_NAME, trailingslashit( WP_LANG_DIR ) . 'plugins/' . POLYGON_PLUGIN_NAME . '/' . POLYGON_PLUGIN_NAME . '-' . $locale . '.mo' );
+		load_textdomain( POLYGON_PLUGIN_NAME, trailingslashit( WP_LANG_DIR ) . 'plugins/' . POLYGON_PLUGIN_NAME . '-' . $locale . '.mo' );
 
 		// Load textdomain from the local languages folder.
 		load_plugin_textdomain( POLYGON_PLUGIN_NAME, false, plugin_basename( POLYGON_PLUGIN_DIR_PATH ) . '/languages/' );

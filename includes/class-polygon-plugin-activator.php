@@ -55,15 +55,15 @@ class Polygon_Plugin_Activator {
 					foreach ( $blogs as $blog ) {
 						switch_to_blog( $blog['blog_id'] );
 
-						Polygon_Plugin_Activator::run_activation_script();
+						self::run_activation_script();
 					}
 					restore_current_blog();
 				}
 			} else {
-				Polygon_Plugin_Activator::run_activation_script();
+				self::run_activation_script();
 			}
 		} else {
-			Polygon_Plugin_Activator::run_activation_script();
+			self::run_activation_script();
 		}
 	}
 

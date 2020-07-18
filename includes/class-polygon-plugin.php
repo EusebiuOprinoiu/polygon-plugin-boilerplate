@@ -40,7 +40,7 @@ class Polygon_Plugin {
 	 */
 	public function __construct() {
 		$this->load_dependencies();
-		$this->set_locale();
+		$this->load_textdomain();
 		$this->define_hooks();
 	}
 
@@ -66,16 +66,16 @@ class Polygon_Plugin {
 	 */
 	private function load_dependencies() {
 		// Class responsible for orchestrating the actions and filters of the core plugin.
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-loader.php' );
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-loader.php';
 
 		// Class responsible for defining internationalization functionality of the plugin.
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php' );
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php';
 
 		// Class responsible for defining all actions that occur in the admin area.
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-admin.php' );
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-admin.php';
 
 		// Class responsible for defining all actions that occur in the frontend.
-		require_once( POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-public.php' );
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-public.php';
 
 		$this->loader = new Polygon_Plugin_Loader();
 	}
@@ -85,7 +85,7 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Define locale for internationalization.
+	 * Load plugin text-domain.
 	 *
 	 * Uses the Polygon_Plugin_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
@@ -93,7 +93,7 @@ class Polygon_Plugin {
 	 * @since  1.0.0
 	 * @access private
 	 */
-	private function set_locale() {
+	private function load_textdomain() {
 		$plugin_i18n = new Polygon_Plugin_i18n();
 
 		$this->loader->add_action( 'after_setup_theme', $plugin_i18n, 'load_plugin_textdomain' );
@@ -113,18 +113,18 @@ class Polygon_Plugin {
 	 */
 	private function define_hooks() {
 		// Create objects from classes.
-		$plugin_admin  = new Polygon_Plugin_Admin();
-		$plugin_public = new Polygon_Plugin_Public();
+		$admin  = new Polygon_Plugin_Admin();
+		$public = new Polygon_Plugin_Public();
 
 		// Register admin hooks.
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'maybe_update' );
-		$this->loader->add_action( 'wpmu_new_blog', $plugin_admin, 'maybe_activate', 10, 6 );
+		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'plugins_loaded', $admin, 'maybe_update' );
+		$this->loader->add_action( 'wpmu_new_blog', $admin, 'maybe_activate', 10, 6 );
 
 		// Register public hooks.
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_scripts' );
 	}
 
 
@@ -156,37 +156,5 @@ class Polygon_Plugin {
 	 */
 	public function get_loader() {
 		return $this->loader;
-	}
-
-
-
-
-
-	/**
-	 * Retrieve the plugin name.
-	 *
-	 * Retrieve the unique identifier of our plugin (slug) and return it as a string.
-	 *
-	 * @since  1.0.0
-	 * @return string
-	 */
-	public function get_plugin_name() {
-		return POLYGON_PLUGIN_NAME;
-	}
-
-
-
-
-
-	/**
-	 * Retrieve the plugin version.
-	 *
-	 * Retrieve the version of our plugin and return it as a string.
-	 *
-	 * @since  1.0.0
-	 * @return string
-	 */
-	public function get_version() {
-		return POLYGON_PLUGIN_VERSION;
 	}
 }
