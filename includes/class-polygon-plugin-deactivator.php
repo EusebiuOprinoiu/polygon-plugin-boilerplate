@@ -45,11 +45,10 @@ class Polygon_Plugin_Deactivator {
 	public static function deactivate( $network_wide = false ) {
 		if ( is_multisite() ) {
 			if ( $network_wide ) {
-				// Global variables.
 				global $wpdb;
 
-				// Variables.
-				$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );    // phpcs:ignore
+				// phpcs:ignore
+				$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
 
 				if ( $blogs ) {
 					foreach ( $blogs as $blog ) {

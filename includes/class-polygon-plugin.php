@@ -51,15 +51,8 @@ class Polygon_Plugin {
 	/**
 	 * Load the required dependencies.
 	 *
-	 * Include the files for the following classes that make up the plugin:
-	 *
-	 * - Polygon_Plugin_Loader - Orchestrates the hooks of the plugin.
-	 * - Polygon_Plugin_i18n   - Defines internationalization functionality.
-	 * - Polygon_Plugin_Admin  - Defines all hooks for the admin area.
-	 * - Polygon_Plugin_Public - Defines all hooks for the public side of the site.
-	 *
-	 * Create an instance of the loader which will be used to register the hooks
-	 * with WordPress.
+	 * Load the files required to create our plugin.
+	 * Create an instance of the loader which will be used to register the hooks with WordPress.
 	 *
 	 * @since  1.0.0
 	 * @access private
