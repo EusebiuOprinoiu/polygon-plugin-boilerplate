@@ -29,7 +29,7 @@ if ( is_multisite() ) {
 	global $wpdb;
 
 	// Variables.
-	$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
+	$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );    // phpcs:ignore
 
 	if ( $blogs ) {
 		foreach ( $blogs as $blog ) {

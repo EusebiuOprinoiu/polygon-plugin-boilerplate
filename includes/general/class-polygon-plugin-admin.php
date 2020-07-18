@@ -88,7 +88,7 @@ class Polygon_Plugin_Admin {
 		}
 
 		if ( version_compare( POLYGON_PLUGIN_VERSION, $polygon_plugin['plugin-version'] ) > 0 ) {
-			/*
+			/* phpcs:ignore
 			// Migrate options to version 1.1.0.
 			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
 				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/migrate-options/migrate-to-version-1.1.0.php';

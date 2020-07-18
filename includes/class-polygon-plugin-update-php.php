@@ -55,7 +55,9 @@ class Polygon_Plugin_Update_PHP {
 		$this->recommended_version = '7.4';
 
 		if ( ! $this->check() ) {
+			add_action( 'network_admin_notices', array( $this, 'update_php_warning' ) );
 			add_action( 'admin_notices', array( $this, 'update_php_warning' ) );
+			add_action( 'admin_init', array( $this, 'disable_plugin' ) );
 		}
 	}
 
@@ -93,20 +95,62 @@ class Polygon_Plugin_Update_PHP {
 	 */
 	public function update_php_warning() {
 		if ( current_user_can( 'manage_options' ) ) {
-			?>
-				<div class="error polygon-warning">
-					<p></p>
-					<p>
-						<b><?php echo esc_html__( 'WARNING: You server is running outdated software!', 'polygon-plugin' ); ?></b>
-					</p>
-					<p>
-						<?php printf( esc_html__( 'Polygon Plugin will not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION ); ?>
-						<br>
-						<?php printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'polygon-plugin' ), $this->recommended_version ); ?>
-					</p>
-					<p></p>
-				</div>
-			<?php
+			if ( ! is_multisite() ||
+				( is_multisite() && is_super_admin() ) ||
+				( is_multisite() && ! is_super_admin() && ! is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) ) ) ) {
+					$disable_button = true;
+			} else {
+				$disable_button = false;
+			}
+
+
+			// phpcs:ignore
+			if ( ! isset( $_GET['disable_polygon_plugin'] ) ) {
+				?>
+					<div class="error polygon-warning">
+						<p></p>
+						<p>
+							<b><?php echo esc_html__( 'WARNING: You server is running outdated software!', 'polygon-plugin' ); ?></b>
+						</p>
+						<p>
+							<?php // phpcs:ignore
+								printf( esc_html__( 'Polygon Plugin will not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), $this->minimum_version, PHP_VERSION );
+							?>
+							<br>
+							<?php // phpcs:ignore
+								printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'polygon-plugin' ), $this->recommended_version );
+							?>
+						</p>
+						<?php if ( $disable_button ) { ?>
+							<p>
+								<a href="?disable_polygon_plugin=true"><b><?php echo esc_html__( 'Disable Plugin', 'polygon-plugin' ); ?></b></a>
+							</p>
+						<?php } ?>
+						<p></p>
+					</div>
+				<?php
+			}
+		}
+	}
+
+
+
+
+
+	/**
+	 * Disable plugin programatically.
+	 *
+	 * Allow users to disable the plugin at the click of a button.
+	 *
+	 * @since 1.0.0
+	 */
+	public function disable_plugin() {
+		if ( current_user_can( 'manage_options' ) ) {
+			// If the user clicks the disable plugin button, deactivate.
+			// phpcs:ignore
+			if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
+				deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
+			}
 		}
 	}
 }
