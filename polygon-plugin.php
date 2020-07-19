@@ -68,6 +68,7 @@ function activate_polygon_plugin( $network_wide ) {
 	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php';
 	Polygon_Plugin_Activator::activate( $network_wide );
 }
+register_activation_hook( POLYGON_PLUGIN_MAIN_FILE, 'activate_polygon_plugin' );
 
 
 
@@ -85,16 +86,9 @@ function deactivate_polygon_plugin( $network_wide ) {
 	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php';
 	Polygon_Plugin_Deactivator::deactivate( $network_wide );
 }
-
-
-
-
-
-/**
- * Register activation and deactivation hooks.
- */
-register_activation_hook( POLYGON_PLUGIN_MAIN_FILE, 'activate_polygon_plugin' );
 register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin' );
+
+
 
 
 

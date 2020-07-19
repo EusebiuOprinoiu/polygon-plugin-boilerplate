@@ -107,7 +107,7 @@ class Polygon_Plugin_Update_PHP {
 			// phpcs:ignore
 			if ( ! isset( $_GET['disable_polygon_plugin'] ) ) {
 				?>
-					<div class="error polygon-warning">
+					<div class="notice notice-error">
 						<p></p>
 						<p>
 							<b><?php echo esc_html__( 'WARNING: You server is running outdated software!', 'polygon-plugin' ); ?></b>
@@ -123,7 +123,9 @@ class Polygon_Plugin_Update_PHP {
 						</p>
 						<?php if ( $disable_button ) { ?>
 							<p>
-								<a href="?disable_polygon_plugin=true"><b><?php echo esc_html__( 'Disable Plugin', 'polygon-plugin' ); ?></b></a>
+								<a href="<?php echo esc_url( wp_nonce_url( '?disable_polygon_plugin=true', 'disable-polygon-plugin' ) ); ?>">
+									<b><?php echo esc_html__( 'Disable Plugin', 'polygon-plugin' ); ?></b>
+								</a>
 							</p>
 						<?php } ?>
 						<p></p>
@@ -146,10 +148,15 @@ class Polygon_Plugin_Update_PHP {
 	 */
 	public function disable_plugin() {
 		if ( current_user_can( 'manage_options' ) ) {
-			// If the user clicks the disable plugin button, deactivate.
-			// phpcs:ignore
-			if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
-				deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
+			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_title_with_dashes( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
+
+			if ( $nonce ) {
+				if ( wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
+					// If the user clicks the disable plugin button, deactivate.
+					if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
+						deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
+					}
+				}
 			}
 		}
 	}
