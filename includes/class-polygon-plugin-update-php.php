@@ -150,12 +150,10 @@ class Polygon_Plugin_Update_PHP {
 		if ( current_user_can( 'manage_options' ) ) {
 			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_title_with_dashes( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
 
-			if ( $nonce ) {
-				if ( wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
-					// If the user clicks the disable plugin button, deactivate.
-					if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
-						deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
-					}
+			if ( $nonce && wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
+				// If the user clicks the disable plugin button, deactivate.
+				if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
+					deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
 				}
 			}
 		}
