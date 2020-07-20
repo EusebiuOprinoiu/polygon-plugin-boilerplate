@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Polygon Plugin Boilerplate\n"
-"POT-Creation-Date: 2020-07-19 16:18+0300\n"
+"POT-Creation-Date: 2020-07-21 02:47+0300\n"
 "PO-Revision-Date: 2015-06-14 18:51+0200\n"
 "Last-Translator: Eusebiu Oprinoiu <eusebiu.websites@outlook.com>\n"
 "Language-Team: Polygon Themes\n"
@@ -39,20 +39,4 @@ msgstr ""
 
 #: includes/class-polygon-plugin-update-php.php:127
 msgid "Disable Plugin"
-msgstr ""
-
-#: includes/class-polygon-plugin-update-php.php:155
-msgid "WARNING: Nonce verification failed!"
-msgstr ""
-
-#: includes/class-polygon-plugin-update-php.php:158
-msgid ""
-"Polygon Plugin was not disabled. You can fix this by re-logging into your "
-"WordPress dashboard."
-msgstr ""
-
-#: includes/class-polygon-plugin-update-php.php:160
-msgid ""
-"As for nonces, they are here to protect you from certain types of misuse, "
-"malicious or otherwise. When one fails, it's usually a good thing!"
 msgstr ""

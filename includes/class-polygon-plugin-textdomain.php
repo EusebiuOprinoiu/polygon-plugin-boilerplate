@@ -18,7 +18,7 @@
  *
  * @since 1.0.0
  */
-class Polygon_Plugin_i18n {    // phpcs:ignore
+class Polygon_Plugin_Textdomain {
 
 	/**
 	 * Initialize the class and get things started.

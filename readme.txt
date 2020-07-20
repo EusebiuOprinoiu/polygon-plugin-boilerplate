@@ -1,7 +1,7 @@
 # Polygon Plugin
 Contributors: PolygonThemes, EusebiuOprinoiu
 Tags: polygon, plugin, boilerplate
-Stable tag: trunk
+Stable tag: 1.0.0 (or trunk)
 Requires PHP: 7.2
 Tested up to: 5.4
 Requires at least: 5.0

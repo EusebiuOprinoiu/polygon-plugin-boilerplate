@@ -123,7 +123,7 @@ class Polygon_Plugin_Update_PHP {
 						</p>
 						<?php if ( $disable_button ) { ?>
 							<p>
-								<a href="<?php echo esc_url( wp_nonce_url( '?disable_polygon_plugin=true', 'disable-polygon-plugin', 'disable-polygon-plugin-nonce' ) ); ?>">
+								<a href="<?php echo esc_url( wp_nonce_url( '?disable_polygon_plugin=true', 'disable-polygon-plugin' ) ); ?>">
 									<b><?php echo esc_html__( 'Disable Plugin', 'polygon-plugin' ); ?></b>
 								</a>
 							</p>
@@ -140,35 +140,6 @@ class Polygon_Plugin_Update_PHP {
 
 
 	/**
-	 * Display nonce warning.
-	 *
-	 * Display a warning when the nonce verification fails and provide instructions
-	 * on how to solve the issue.
-	 *
-	 * @since 1.0.0
-	 */
-	public function nonce_warning() {
-		?>
-			<div class="notice notice-error is-dismissible">
-				<p></p>
-				<p>
-					<b><?php echo esc_html__( 'WARNING: Nonce verification failed!', 'polygon-plugin' ); ?></b>
-				</p>
-				<p>
-					<?php echo esc_html__( 'Polygon Plugin was not disabled. You can fix this by re-logging into your WordPress dashboard.', 'polygon-plugin' ); ?>
-					<br>
-					<?php echo esc_html__( 'As for nonces, they are here to protect you from certain types of misuse, malicious or otherwise. When one fails, it\'s usually a good thing!', 'polygon-plugin' ); ?>
-				</p>
-				<p></p>
-			</div>
-		<?php
-	}
-
-
-
-
-
-	/**
 	 * Disable plugin programatically.
 	 *
 	 * Allow users to disable the plugin at the click of a button.
@@ -177,17 +148,12 @@ class Polygon_Plugin_Update_PHP {
 	 */
 	public function disable_plugin() {
 		if ( current_user_can( 'manage_options' ) ) {
-			$nonce = isset( $_REQUEST['disable-polygon-plugin-nonce'] ) ? sanitize_title_with_dashes( wp_unslash( $_REQUEST['disable-polygon-plugin-nonce'] ) ) : null;
+			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_title_with_dashes( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
 
-			if ( $nonce ) {
-				if ( wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
-					// If the user clicks the disable plugin button, deactivate.
-					if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
-						deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
-					}
-				} else {
-					add_action( 'network_admin_notices', array( $this, 'nonce_warning' ) );
-					add_action( 'admin_notices', array( $this, 'nonce_warning' ) );
+			if ( $nonce && wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
+				// If the user clicks the disable plugin button, deactivate.
+				if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
+					deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
 				}
 			}
 		}

@@ -21,24 +21,26 @@
 class Polygon_Plugin {
 
 	/**
-	 * The loader responsible for maintaining and registering all hooks that power the plugin.
+	 * Initialize the class and get things started.
 	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    object
+	 * @since 1.0.0
 	 */
-	protected $loader;
+	public function __construct() {
+		// Nothing yet.
+	}
 
 
 
 
 
 	/**
-	 * Initialize the class and get things started.
+	 * Execute all hooks.
+	 *
+	 * Execute all hooks we previously registered inside the function define_hooks().
 	 *
 	 * @since 1.0.0
 	 */
-	public function __construct() {
+	public function run() {
 		$this->load_dependencies();
 		$this->load_textdomain();
 		$this->define_hooks();
@@ -58,19 +60,10 @@ class Polygon_Plugin {
 	 * @access private
 	 */
 	private function load_dependencies() {
-		// Class responsible for orchestrating the actions and filters of the core plugin.
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-loader.php';
-
-		// Class responsible for defining internationalization functionality of the plugin.
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-i18n.php';
-
-		// Class responsible for defining all actions that occur in the admin area.
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-textdomain.php';
 		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-admin.php';
-
-		// Class responsible for defining all actions that occur in the frontend.
 		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-public.php';
-
-		$this->loader = new Polygon_Plugin_Loader();
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-updates.php';
 	}
 
 
@@ -80,16 +73,16 @@ class Polygon_Plugin {
 	/**
 	 * Load plugin text-domain.
 	 *
-	 * Uses the Polygon_Plugin_i18n class in order to set the domain and to register the hook
+	 * Uses the Polygon_Plugin_Textdomain class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since  1.0.0
 	 * @access private
 	 */
 	private function load_textdomain() {
-		$plugin_i18n = new Polygon_Plugin_i18n();
+		$textdomain = new Polygon_Plugin_Textdomain();
 
-		$this->loader->add_action( 'after_setup_theme', $plugin_i18n, 'load_plugin_textdomain' );
+		add_action( 'after_setup_theme', array( $textdomain, 'load_plugin_textdomain' ) );
 	}
 
 
@@ -105,49 +98,21 @@ class Polygon_Plugin {
 	 * @access private
 	 */
 	private function define_hooks() {
-		// Create objects from classes.
-		$admin  = new Polygon_Plugin_Admin();
-		$public = new Polygon_Plugin_Public();
+		$admin   = new Polygon_Plugin_Admin();
+		$public  = new Polygon_Plugin_Public();
+		$updates = new Polygon_Plugin_Updates();
+
 
 		// Register admin hooks.
-		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'plugins_loaded', $admin, 'maybe_update' );
-		$this->loader->add_action( 'wpmu_new_blog', $admin, 'maybe_activate', 10, 6 );
+		add_action( 'admin_enqueue_scripts', array( $admin, 'enqueue_styles' ) );
+		add_action( 'admin_enqueue_scripts', array( $admin, 'enqueue_scripts' ) );
 
 		// Register public hooks.
-		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $public, 'enqueue_scripts' );
-	}
+		add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_scripts' ) );
 
-
-
-
-
-	/**
-	 * Run loader and execute all hooks.
-	 *
-	 * Run the plugin loader and execute all hooks we previously registered inside the function define_hooks().
-	 *
-	 * @since 1.0.0
-	 */
-	public function run() {
-		$this->loader->run();
-	}
-
-
-
-
-
-	/**
-	 * Retrieve the plugin loader.
-	 *
-	 * Retrieve the object containing all hooks registered by our plugin.
-	 *
-	 * @since  1.0.0
-	 * @return object
-	 */
-	public function get_loader() {
-		return $this->loader;
+		// Register db update hooks.
+		add_action( 'plugins_loaded', array( $updates, 'maybe_update' ) );
+		add_action( 'wpmu_new_blog', array( $updates, 'maybe_activate' ), 10, 6 );
 	}
 }
