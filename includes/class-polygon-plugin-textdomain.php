@@ -23,10 +23,11 @@ class Polygon_Plugin_Textdomain {
 	/**
 	 * Load plugin text-domain.
 	 *
-	 * Load the plugin text-domain and define the location of our translation files:
+	 * Load the plugin text-domain and define the location of our translation files.
+	 * See examples below:
 	 *
 	 * - Global /languages/ folder: wp-content/languages/plugins/polygon-plugin-en_US.mo
-	 * - Local /languages/ folder: wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
+	 * - Local /languages/ folder:  wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
 	 *
 	 * If no files are found in the global languages folder the plugin uses the files available in the
 	 * local folder.
