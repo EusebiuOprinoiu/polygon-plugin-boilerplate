@@ -21,19 +21,6 @@
 class Polygon_Plugin_Updates {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Migrate and update options on plugin updates.
 	 *
 	 * Compare the current plugin version with the one stored in the options table
@@ -43,7 +30,7 @@ class Polygon_Plugin_Updates {
 	 *
 	 * @since 1.0.0
 	 */
-	public function maybe_update() {
+	public function maybe_run_recursive_updates() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
 		if ( ! isset( $polygon_plugin['plugin-version'] ) ) {
@@ -99,7 +86,7 @@ class Polygon_Plugin_Updates {
 	 * @param int    $site_id Site ID. Only relevant on multi-network installs. Optional.
 	 * @param array  $meta    Meta data. Used to set initial site options. Optional.
 	 */
-	public function maybe_activate( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+	public function maybe_run_activation_script( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
 		if ( $blog_id ) {
 			if ( is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) ) ) {
 				switch_to_blog( $blog_id );

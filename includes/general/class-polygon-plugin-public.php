@@ -20,19 +20,6 @@
 class Polygon_Plugin_Public {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Register stylesheets for the frontend.
 	 *
 	 * Register and enqueue stylesheets for the frontend.

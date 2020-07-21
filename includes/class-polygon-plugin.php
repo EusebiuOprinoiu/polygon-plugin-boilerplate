@@ -21,22 +21,10 @@
 class Polygon_Plugin {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Execute all hooks.
 	 *
-	 * Execute all hooks we previously registered inside the function define_hooks().
+	 * Load dependencies, the plugin text-domain and execute all hooks
+	 * we previously registered inside the function define_hooks().
 	 *
 	 * @since 1.0.0
 	 */
@@ -97,10 +85,10 @@ class Polygon_Plugin {
 	 * @access private
 	 */
 	private function define_hooks() {
+		// Create objects from classes.
 		$admin   = new Polygon_Plugin_Admin();
 		$public  = new Polygon_Plugin_Public();
 		$updates = new Polygon_Plugin_Updates();
-
 
 		// Register admin hooks.
 		add_action( 'admin_enqueue_scripts', array( $admin, 'enqueue_styles' ) );
@@ -111,7 +99,7 @@ class Polygon_Plugin {
 		add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_scripts' ) );
 
 		// Register db update hooks.
-		add_action( 'plugins_loaded', array( $updates, 'maybe_update' ) );
-		add_action( 'wpmu_new_blog', array( $updates, 'maybe_activate' ), 10, 6 );
+		add_action( 'plugins_loaded', array( $updates, 'maybe_run_recursive_updates' ) );
+		add_action( 'wpmu_new_blog', array( $updates, 'maybe_run_activation_script' ), 10, 6 );
 	}
 }

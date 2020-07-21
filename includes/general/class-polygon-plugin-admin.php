@@ -20,19 +20,6 @@
 class Polygon_Plugin_Admin {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Register stylesheets for the admin area.
 	 *
 	 * Register and enqueue stylesheets for the admin area.

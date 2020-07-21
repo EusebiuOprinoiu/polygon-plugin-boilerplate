@@ -21,19 +21,6 @@
 class Polygon_Plugin_Textdomain {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Load plugin text-domain.
 	 *
 	 * Load the plugin text-domain for translation from:

@@ -20,19 +20,6 @@
 class Polygon_Plugin_Deactivator {
 
 	/**
-	 * Initialize the class and get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		// Nothing yet.
-	}
-
-
-
-
-
-	/**
 	 * Run the deactivation script.
 	 *
 	 * Run the deactivation script for the current site if we are on a standard
