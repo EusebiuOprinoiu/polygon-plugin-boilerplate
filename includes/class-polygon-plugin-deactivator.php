@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the class fired during the plugin deactivation
+ * Fired during plugin deactivation
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -20,10 +20,10 @@
 class Polygon_Plugin_Deactivator {
 
 	/**
-	 * Run the deactivation script.
+	 * Run deactivation script.
 	 *
 	 * Run the deactivation script for the current site if we are on a standard
-	 * WordPress install or for all sites if we are on WordPress Multisite
+	 * WordPress install, or for all sites if we are on WordPress Multisite
 	 * and the plugin is network activated.
 	 *
 	 * @since 1.0.0

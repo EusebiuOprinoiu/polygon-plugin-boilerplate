@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the core plugin class
+ * The core plugin class
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -13,8 +13,8 @@
 /**
  * The core plugin class.
  *
- * This is used to define internationalization, admin-specific hooks, and
- * public-facing site hooks.
+ * This class is used to load all dependencies, prepare the plugin for translation
+ * and register all actions and filters with WordPress.
  *
  * @since 1.0.0
  */
@@ -39,7 +39,7 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Load the required dependencies.
+	 * Load required dependencies.
 	 *
 	 * Load the files required to create our plugin.
 	 *
@@ -60,8 +60,8 @@ class Polygon_Plugin {
 	/**
 	 * Load plugin text-domain.
 	 *
-	 * Uses the Polygon_Plugin_Textdomain class in order to set the domain and to register the hook
-	 * with WordPress.
+	 * Uses the Polygon_Plugin_Textdomain class in order to set the text-domain and define
+	 * the location of our translation files.
 	 *
 	 * @since  1.0.0
 	 * @access private
@@ -77,9 +77,9 @@ class Polygon_Plugin {
 
 
 	/**
-	 * Register hooks for our plugin.
+	 * Register hooks with WordPress.
 	 *
-	 * Create the objects required for our plugin and register all hooks.
+	 * Create objects from classes and register all hooks with WordPress.
 	 *
 	 * @since  1.0.0
 	 * @access private

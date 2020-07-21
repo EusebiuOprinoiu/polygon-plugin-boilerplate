@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the class with the public-facing functionality
+ * Do things on the frontend
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -11,23 +11,22 @@
 
 
 /**
- * The public-facing functionality of the plugin.
+ * Do things on the frontend.
  *
- * This class is responsable for maintaining all functions with public-facing functionality.
+ * This class is used to maintain the functionality for the public-facing side
+ * of our website.
  *
  * @since 1.0.0
  */
 class Polygon_Plugin_Public {
 
 	/**
-	 * Register stylesheets for the frontend.
-	 *
 	 * Register and enqueue stylesheets for the frontend.
 	 *
 	 * @since 1.0.0
 	 */
 	public function enqueue_styles() {
-		// Enqueue styles.
+		// Enqueue frontend styles.
 	}
 
 
@@ -35,13 +34,11 @@ class Polygon_Plugin_Public {
 
 
 	/**
-	 * Register javascript for the frontend.
-	 *
 	 * Register and enqueue javascript for the frontend.
 	 *
 	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
-		// Enqueue scripts.
+		// Enqueue frontend scripts.
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the class with requirements
+ * Check plugin requirements
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -13,7 +13,7 @@
 /**
  * Check plugin requirements.
  *
- * Check if the minimum requirements are met.
+ * This class checks if the minimum requirements are met.
  * For this plugin we only check the PHP version.
  *
  * @since 1.0.0
@@ -43,10 +43,7 @@ class Polygon_Plugin_Requirements {
 
 
 	/**
-	 * Set the minimum and recommended versions of PHP.
-	 *
-	 * Set the minimum version of PHP required to run the plugin, the minimum recommended version
-	 * and display a warning if the current version is lower than the minimum version.
+	 * Get things started.
 	 *
 	 * @since 1.0.0
 	 */
@@ -54,7 +51,7 @@ class Polygon_Plugin_Requirements {
 		$this->minimum_php_version     = '7.2';
 		$this->recommended_php_version = '7.4';
 
-		if ( ! $this->check() ) {
+		if ( ! $this->check_php() ) {
 			add_action( 'network_admin_notices', array( $this, 'php_requirements_not_met' ) );
 			add_action( 'admin_notices', array( $this, 'php_requirements_not_met' ) );
 		}
@@ -65,15 +62,35 @@ class Polygon_Plugin_Requirements {
 
 
 	/**
-	 * Check plugin requirements.
+	 * Check all plugin requirements.
 	 *
-	 * Check if the current PHP version is higher than the minimum accepted version.
-	 * If the function returns true the plugin can run without problems.
+	 * Check if all the requirements are met. If the function returns true,
+	 * the plugin can run without problems.
 	 *
 	 * @since  1.0.0
 	 * @return bool
 	 */
 	public function check() {
+		if ( $this->check_php() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
+
+
+
+	/**
+	 * Check PHP requirements.
+	 *
+	 * Check if the server runs on a supported version of PHP.
+	 *
+	 * @since  1.0.0
+	 * @return bool
+	 */
+	public function check_php() {
 		return version_compare( PHP_VERSION, $this->minimum_php_version ) >= 0;
 	}
 
@@ -84,7 +101,9 @@ class Polygon_Plugin_Requirements {
 	/**
 	 * Display PHP warning.
 	 *
-	 * If the server is running on an outdated version of PHP advise users to upgrade.
+	 * If the server is using an outdated version of PHP advise users to upgrade.
+	 * Allow people to disable the plugin straight from notification, without going
+	 * to the Plugins page.
 	 *
 	 * @since 1.0.0
 	 */

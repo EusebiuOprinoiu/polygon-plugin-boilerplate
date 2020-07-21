@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the class for plugin updates and migrations
+ * Plugin updates and migrations
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -11,7 +11,7 @@
 
 
 /**
- * Run plugin updates and migrations.
+ * Plugin updates and migrations.
  *
  * This class handles all database changes required after a plugin update.
  * It also makes sure the changes propagate on all sites when using Multisite.

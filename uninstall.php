@@ -11,7 +11,7 @@
 
 
 /**
- * Exit if uninstall not called from WordPress.
+ * Prevent unauthorized access.
  */
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;

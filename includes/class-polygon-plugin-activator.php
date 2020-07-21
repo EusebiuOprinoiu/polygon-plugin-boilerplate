@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that contains the class fired during the plugin activation
+ * Fired during plugin activation
  *
  * @since   1.0.0
  * @package Polygon_Plugin
@@ -20,10 +20,10 @@
 class Polygon_Plugin_Activator {
 
 	/**
-	 * Run the activation script.
+	 * Run activation script.
 	 *
 	 * Run the activation script for the current site if we are on a standard
-	 * WordPress install or for all sites if we are on WordPress Multisite
+	 * WordPress install, or for all sites if we are on WordPress Multisite
 	 * and the plugin is network activated.
 	 *
 	 * @since 1.0.0
@@ -60,7 +60,7 @@ class Polygon_Plugin_Activator {
 	/**
 	 * Do stuff on plugin activation.
 	 *
-	 * Create the plugin options, set their defaults and create any required database tables
+	 * Create the plugin options, set defaults and create any required database tables
 	 * on the first plugin activation.
 	 *
 	 * @since 1.0.0
