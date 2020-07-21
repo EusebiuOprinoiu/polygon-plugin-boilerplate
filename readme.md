@@ -1,6 +1,6 @@
 # Polygon Plugin Boilerplate
 
-Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. The current version is based on the WordPress Plugin Boilerplate by Tom McFarlin.
+Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
 
 ## New Project
 
