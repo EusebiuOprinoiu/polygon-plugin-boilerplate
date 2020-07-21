@@ -1,0 +1,30 @@
+# Autodetect text files
+* text=auto
+
+# Force the following filetypes to have Unix eols
+*.* text eol=lf
+
+# Force the following filetypes to have Windows eols
+*.bat text eol=crlf
+
+# Force images/fonts to be handled as binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.ogg binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.rar binary
+*.zip binary
+*.gz binary
+*.7z binary
+*.ttf binary
+*.pdf binary
+*.exe binary
+*.data binary
