@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Polygon Plugin Boilerplate\n"
-"POT-Creation-Date: 2020-07-21 16:07+0300\n"
+"POT-Creation-Date: 2020-07-21 21:40+0300\n"
 "PO-Revision-Date: 2020-07-21 16:00+0300\n"
 "Last-Translator: Eusebiu Oprinoiu\n"
 "Language-Team: Polygon Themes\n"
@@ -22,25 +22,25 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: includes/third-party\n"
 "X-Poedit-SearchPathExcluded-1: *.min.js\n"
 
-#: includes/class-polygon-plugin-update-php.php:113
+#: includes/class-polygon-plugin-requirements.php:120
 msgid "WARNING: You server is running outdated software!"
 msgstr ""
 
-#: includes/class-polygon-plugin-update-php.php:117
+#: includes/class-polygon-plugin-requirements.php:124
 #, php-format
 msgid ""
 "Polygon Plugin will not run on PHP versions older than %1$s. You are running "
 "on version %2$s which has serious security and performance issues."
 msgstr ""
 
-#: includes/class-polygon-plugin-update-php.php:121
+#: includes/class-polygon-plugin-requirements.php:128
 #, php-format
 msgid ""
 "Please ask your hosting provider to help you upgrade. We recommend PHP %1$s "
 "or newer."
 msgstr ""
 
-#: includes/class-polygon-plugin-update-php.php:127
+#: includes/class-polygon-plugin-requirements.php:134
 msgid "Disable Plugin"
 msgstr ""
 
@@ -55,8 +55,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Polygon Plugin Boilerplate is a standardized, organized, object-oriented "
-"foundation for building high-quality WordPress plugins. Based on the original "
-"work of Tom McFarlin."
+"foundation for building high-quality WordPress plugins."
 msgstr ""
 
 #. Author of the plugin/theme

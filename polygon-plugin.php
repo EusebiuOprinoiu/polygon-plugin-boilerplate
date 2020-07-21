@@ -95,18 +95,17 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
 
 
 /**
- * Load and execute plugin.
+ * Run Polygon Plugin.
  *
- * Begin execution of the plugin if the server is not running an outdated version of PHP
- * or display a warning otherwise.
+ * Load and execute the code of our plugin if all requirements are met.
  *
  * @since 1.0.0
  */
 function run_polygon_plugin() {
-	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-update-php.php';
-	$php = new Polygon_Plugin_Update_PHP();
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-requirements.php';
+	$requirements = new Polygon_Plugin_Requirements();
 
-	if ( $php->check() ) {
+	if ( $requirements->check() ) {
 		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php';
 		$plugin = new Polygon_Plugin();
 		$plugin->run();
