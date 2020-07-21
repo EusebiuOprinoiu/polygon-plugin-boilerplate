@@ -54,7 +54,6 @@ class Polygon_Plugin {
 	 * Load the required dependencies.
 	 *
 	 * Load the files required to create our plugin.
-	 * Create an instance of the loader which will be used to register the hooks with WordPress.
 	 *
 	 * @since  1.0.0
 	 * @access private
@@ -92,7 +91,7 @@ class Polygon_Plugin {
 	/**
 	 * Register hooks for our plugin.
 	 *
-	 * Create the objects required for our plugin and register all hooks using the plugin loader.
+	 * Create the objects required for our plugin and register all hooks.
 	 *
 	 * @since  1.0.0
 	 * @access private
