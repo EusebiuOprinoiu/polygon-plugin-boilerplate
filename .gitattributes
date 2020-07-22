@@ -42,6 +42,7 @@
 
 # Ignore folders during deployment.
 .github    export-ignore
+.polygon   export-ignore
 .wordpress export-ignore
 .temporary export-ignore
 temporary  export-ignore
