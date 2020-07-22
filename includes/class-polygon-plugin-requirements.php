@@ -102,14 +102,14 @@ class Polygon_Plugin_Requirements {
 	 * Display PHP warning.
 	 *
 	 * If the server is using an outdated version of PHP advise users to upgrade.
-	 * Allow people to disable the plugin straight from notification, without going
+	 * Allow people to disable the plugin straight from the notification, without going
 	 * to the Plugins page.
 	 *
 	 * @since 1.0.0
 	 */
 	public function php_requirements_not_met() {
 		if ( current_user_can( 'manage_options' ) ) {
-			// Deactivate the plugin if the button 'Disable Plugin' is clicked.
+			// Deactivate the plugin if the button Disable Plugin is clicked.
 			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_title_with_dashes( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
 
 			if ( $nonce && wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
