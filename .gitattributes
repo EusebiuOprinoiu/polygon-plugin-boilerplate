@@ -42,8 +42,9 @@
 
 # Ignore folders during deployment.
 .github    export-ignore
-.temporary export-ignore
 .wordpress export-ignore
+.temporary export-ignore
+temporary  export-ignore
 
 # Ignore files during deployment.
 .gitignore     export-ignore
