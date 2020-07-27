@@ -25,43 +25,43 @@ class Polygon_Plugin_Updates {
 	 *
 	 * Compare the current plugin version with the one stored in the options table
 	 * and migrate recursively if needed after a plugin update. The migration code for each
-	 * version is stored in individual files and it's triggered only if the 'last-updated-version'
-	 * parameter is older than versions where changes have been made.
+	 * version is stored in individual files and it's triggered only if the 'db-version' key
+	 * is older than versions where changes have been made.
 	 *
 	 * @since 1.0.0
 	 */
 	public function maybe_run_recursive_updates() {
 		$polygon_plugin = get_option( 'polygon_plugin' );
 
-		if ( ! isset( $polygon_plugin['plugin-version'] ) ) {
-			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
+		if ( ! isset( $polygon_plugin['version'] ) ) {
+			$polygon_plugin['version'] = POLYGON_PLUGIN_VERSION;
 			update_option( 'polygon_plugin', $polygon_plugin );
 		}
 
-		if ( ! isset( $polygon_plugin['last-updated-version'] ) ) {
-			$polygon_plugin['last-updated-version'] = POLYGON_PLUGIN_VERSION;
+		if ( ! isset( $polygon_plugin['db-version'] ) ) {
+			$polygon_plugin['db-version'] = POLYGON_PLUGIN_VERSION;
 			update_option( 'polygon_plugin', $polygon_plugin );
 		}
 
-		if ( version_compare( POLYGON_PLUGIN_VERSION, $polygon_plugin['plugin-version'] ) > 0 ) {
+		if ( version_compare( POLYGON_PLUGIN_VERSION, $polygon_plugin['version'] ) > 0 ) {
 			/* phpcs:ignore
 			// Migrate options to version 1.1.0.
-			if ( version_compare( $polygon_plugin['last-updated-version'], '1.1.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['db-version'], '1.1.0' ) < 0 ) {
 				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/updates/update-to-version-1.1.0.php';
-				$polygon_plugin['last-updated-version'] = '1.1.0';
+				$polygon_plugin['db-version'] = '1.1.0';
 			}
 
 			// Migrate options to version 1.2.0.
-			if ( version_compare( $polygon_plugin['last-updated-version'], '1.2.0' ) < 0 ) {
+			if ( version_compare( $polygon_plugin['db-version'], '1.2.0' ) < 0 ) {
 				require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/updates/update-to-version-1.2.0.php';
-				$polygon_plugin['last-updated-version'] = '1.2.0';
+				$polygon_plugin['db-version'] = '1.2.0';
 			}
 			*/
 
 
 
 			// Update plugin version.
-			$polygon_plugin['plugin-version'] = POLYGON_PLUGIN_VERSION;
+			$polygon_plugin['version'] = POLYGON_PLUGIN_VERSION;
 
 			// Update plugin options.
 			update_option( 'polygon_plugin', $polygon_plugin );

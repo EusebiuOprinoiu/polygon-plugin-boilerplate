@@ -69,8 +69,8 @@ class Polygon_Plugin_Activator {
 		// Create plugin options if not available.
 		if ( ! get_option( 'polygon_plugin' ) ) {
 			$polygon_plugin = array(
-				'plugin-version'       => POLYGON_PLUGIN_VERSION,
-				'last-updated-version' => POLYGON_PLUGIN_VERSION,
+				'version'    => POLYGON_PLUGIN_VERSION,
+				'db-version' => POLYGON_PLUGIN_VERSION,
 			);
 
 			add_option( 'polygon_plugin', $polygon_plugin );
