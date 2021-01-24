@@ -26,7 +26,7 @@ class Polygon_Plugin_Textdomain {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		add_action( 'after_setup_theme', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 	}
 
 
@@ -34,26 +34,17 @@ class Polygon_Plugin_Textdomain {
 
 
 	/**
-	 * Load plugin text-domain.
+	 * Load the plugin textdomain for translation.
 	 *
-	 * Load the plugin text-domain and define the location of our translation files.
-	 * See examples below:
+	 * The plugin tries to load the files from the global /languages/ folder first.
+	 * If it can't find any, it will load the files from the local /languages/ folder.
 	 *
-	 * - Global /languages/ folder: wp-content/languages/plugins/polygon-plugin-en_US.mo
-	 * - Local /languages/ folder:  wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
-	 *
-	 * If no files are found in the global languages folder the plugin uses the files available in the
-	 * local folder.
+	 * Global folder: wp-content/languages/plugins/polygon-plugin-en_US.mo
+	 * Local folder:  wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
 	 *
 	 * @since 1.0.0
 	 */
-	public function load_plugin_textdomain() {
-		$locale = apply_filters( 'locale', get_locale(), POLYGON_PLUGIN_NAME );
-
-		// Load translation files from the global /languages/ folder.
-		load_textdomain( POLYGON_PLUGIN_NAME, trailingslashit( WP_LANG_DIR ) . 'plugins/' . POLYGON_PLUGIN_NAME . '-' . $locale . '.mo' );
-
-		// Load translation files from the local /languages/ folder.
-		load_plugin_textdomain( POLYGON_PLUGIN_NAME, false, plugin_basename( POLYGON_PLUGIN_DIR_PATH ) . '/languages/' );
+	public function load_textdomain() {
+		load_plugin_textdomain( POLYGON_PLUGIN_SLUG, false, plugin_basename( POLYGON_PLUGIN_DIR ) . '/languages/' );
 	}
 }

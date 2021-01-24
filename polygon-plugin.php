@@ -31,9 +31,7 @@
 
 
 
-/**
- * Abort if this file is called directly.
- */
+// Abort if this file is called directly.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -42,15 +40,13 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 
-/**
- * Define plugin constants.
- */
-define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                         // Current plugin version.
-define( 'POLYGON_PLUGIN_NAME', 'polygon-plugin' );                   // Unique plugin identifier.
+define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                    // Plugin version.
+define( 'POLYGON_PLUGIN_NAME', 'Polygon Plugin' );              // Plugin name.
+define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );              // Plugin slug.
 
-define( 'POLYGON_PLUGIN_MAIN_FILE', __FILE__ );                      // Path to main plugin file.
-define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
-define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
+define( 'POLYGON_PLUGIN_FILE', __FILE__ );                      // Path to main plugin file.
+define( 'POLYGON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );     // URL to plugin directory.
+define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
 
 
 
@@ -65,10 +61,10 @@ define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to p
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function activate_polygon_plugin( $network_wide ) {
-	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php';
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-activator.php';
 	Polygon_Plugin_Activator::activate( $network_wide );
 }
-register_activation_hook( POLYGON_PLUGIN_MAIN_FILE, 'activate_polygon_plugin' );
+register_activation_hook( POLYGON_PLUGIN_FILE, 'activate_polygon_plugin' );
 
 
 
@@ -83,10 +79,10 @@ register_activation_hook( POLYGON_PLUGIN_MAIN_FILE, 'activate_polygon_plugin' );
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function deactivate_polygon_plugin( $network_wide ) {
-	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php';
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-deactivator.php';
 	Polygon_Plugin_Deactivator::deactivate( $network_wide );
 }
-register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin' );
+register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
 
 
 
@@ -102,12 +98,16 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
  * @since 1.0.0
  */
 function run_polygon_plugin() {
-	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-requirements.php';
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
 	$requirements = new Polygon_Plugin_Requirements();
 	$requirements->init();
 
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-textdomain.php';
+	$textdomain = new Polygon_Plugin_Textdomain();
+	$textdomain->init();
+
 	if ( $requirements->check() ) {
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php';
+		require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin.php';
 		$plugin = new Polygon_Plugin();
 		$plugin->run();
 	}

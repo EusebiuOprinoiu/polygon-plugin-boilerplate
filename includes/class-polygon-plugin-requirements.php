@@ -125,7 +125,7 @@ class Polygon_Plugin_Requirements {
 
 			if ( $nonce && wp_verify_nonce( $nonce, 'disable-polygon-plugin' ) ) {
 				if ( isset( $_GET['disable_polygon_plugin'] ) && ( $_GET['disable_polygon_plugin'] === 'true' ) ) {
-					deactivate_plugins( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) );
+					deactivate_plugins( plugin_basename( POLYGON_PLUGIN_FILE ) );
 
 					return; // Do not display the notice on page reload.
 				}
@@ -137,7 +137,7 @@ class Polygon_Plugin_Requirements {
 			if (
 				! is_multisite() ||
 				( is_multisite() && is_super_admin() ) ||
-				( is_multisite() && ! is_super_admin() && ! is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_MAIN_FILE ) ) ) ) {
+				( is_multisite() && ! is_super_admin() && ! is_plugin_active_for_network( plugin_basename( POLYGON_PLUGIN_FILE ) ) ) ) {
 					$disable_button = true;
 			} else {
 				$disable_button = false;

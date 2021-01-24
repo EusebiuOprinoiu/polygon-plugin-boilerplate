@@ -29,9 +29,8 @@ class Polygon_Plugin {
 	 * @since 1.0.0
 	 */
 	public function run() {
-		$this->load_dependencies();
-		$this->load_textdomain();
-		$this->load_hooks();
+		$this->includes();
+		$this->init();
 	}
 
 
@@ -46,29 +45,10 @@ class Polygon_Plugin {
 	 * @since  1.0.0
 	 * @access private
 	 */
-	private function load_dependencies() {
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-textdomain.php';
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-admin.php';
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-public.php';
-		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/general/class-polygon-plugin-updates.php';
-	}
-
-
-
-
-
-	/**
-	 * Load plugin text-domain.
-	 *
-	 * Uses the Polygon_Plugin_Textdomain class in order to set the text-domain and define
-	 * the location of our translation files.
-	 *
-	 * @since  1.0.0
-	 * @access private
-	 */
-	private function load_textdomain() {
-		$textdomain = new Polygon_Plugin_Textdomain();
-		$textdomain->init();
+	private function includes() {
+		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-admin.php';
+		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-public.php';
+		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-updates.php';
 	}
 
 
@@ -83,7 +63,7 @@ class Polygon_Plugin {
 	 * @since  1.0.0
 	 * @access private
 	 */
-	private function load_hooks() {
+	private function init() {
 		$admin = new Polygon_Plugin_Admin();
 		$admin->init();
 
