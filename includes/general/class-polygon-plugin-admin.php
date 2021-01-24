@@ -21,6 +21,20 @@
 class Polygon_Plugin_Admin {
 
 	/**
+	 * Actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+
+
+
+
+
+	/**
 	 * Register and enqueue stylesheets for the admin area.
 	 *
 	 * @since 1.0.0

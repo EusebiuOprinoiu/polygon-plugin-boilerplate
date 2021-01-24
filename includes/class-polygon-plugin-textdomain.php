@@ -21,6 +21,19 @@
 class Polygon_Plugin_Textdomain {
 
 	/**
+	 * Actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'after_setup_theme', array( $this, 'load_plugin_textdomain' ) );
+	}
+
+
+
+
+
+	/**
 	 * Load plugin text-domain.
 	 *
 	 * Load the plugin text-domain and define the location of our translation files.

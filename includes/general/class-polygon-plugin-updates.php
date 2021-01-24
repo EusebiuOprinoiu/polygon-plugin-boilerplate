@@ -21,6 +21,20 @@
 class Polygon_Plugin_Updates {
 
 	/**
+	 * Actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'plugins_loaded', array( $this, 'maybe_run_recursive_updates' ) );
+		add_action( 'wpmu_new_blog', array( $this, 'maybe_run_activation_script' ), 10, 6 );
+	}
+
+
+
+
+
+	/**
 	 * Migrate and update options on plugin updates.
 	 *
 	 * Compare the current plugin version with the one stored in the options table

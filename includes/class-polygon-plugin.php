@@ -31,7 +31,7 @@ class Polygon_Plugin {
 	public function run() {
 		$this->load_dependencies();
 		$this->load_textdomain();
-		$this->define_hooks();
+		$this->load_hooks();
 	}
 
 
@@ -68,8 +68,7 @@ class Polygon_Plugin {
 	 */
 	private function load_textdomain() {
 		$textdomain = new Polygon_Plugin_Textdomain();
-
-		add_action( 'after_setup_theme', array( $textdomain, 'load_plugin_textdomain' ) );
+		$textdomain->init();
 	}
 
 
@@ -84,22 +83,14 @@ class Polygon_Plugin {
 	 * @since  1.0.0
 	 * @access private
 	 */
-	private function define_hooks() {
-		// Create objects from classes.
-		$admin   = new Polygon_Plugin_Admin();
-		$public  = new Polygon_Plugin_Public();
+	private function load_hooks() {
+		$admin = new Polygon_Plugin_Admin();
+		$admin->init();
+
+		$public = new Polygon_Plugin_Public();
+		$public->init();
+
 		$updates = new Polygon_Plugin_Updates();
-
-		// Register admin hooks.
-		add_action( 'admin_enqueue_scripts', array( $admin, 'enqueue_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $admin, 'enqueue_scripts' ) );
-
-		// Register public hooks.
-		add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_scripts' ) );
-
-		// Register db update hooks.
-		add_action( 'plugins_loaded', array( $updates, 'maybe_run_recursive_updates' ) );
-		add_action( 'wpmu_new_blog', array( $updates, 'maybe_run_activation_script' ), 10, 6 );
+		$updates->init();
 	}
 }

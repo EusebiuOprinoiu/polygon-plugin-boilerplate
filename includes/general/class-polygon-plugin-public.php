@@ -21,6 +21,20 @@
 class Polygon_Plugin_Public {
 
 	/**
+	 * Actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+
+
+
+
+
+	/**
 	 * Register and enqueue stylesheets for the frontend.
 	 *
 	 * @since 1.0.0
