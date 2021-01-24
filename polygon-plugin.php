@@ -104,6 +104,7 @@ register_deactivation_hook( POLYGON_PLUGIN_MAIN_FILE, 'deactivate_polygon_plugin
 function run_polygon_plugin() {
 	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-requirements.php';
 	$requirements = new Polygon_Plugin_Requirements();
+	$requirements->init();
 
 	if ( $requirements->check() ) {
 		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php';

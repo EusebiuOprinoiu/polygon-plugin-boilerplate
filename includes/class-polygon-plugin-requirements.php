@@ -50,7 +50,18 @@ class Polygon_Plugin_Requirements {
 	public function __construct() {
 		$this->minimum_php_version     = '7.2';
 		$this->recommended_php_version = '7.4';
+	}
 
+
+
+
+
+	/**
+	 * Actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
 		if ( ! $this->check_php() ) {
 			add_action( 'network_admin_notices', array( $this, 'php_requirements_not_met' ) );
 			add_action( 'admin_notices', array( $this, 'php_requirements_not_met' ) );

@@ -24,7 +24,7 @@ class Polygon_Plugin {
 	 * Execute all hooks.
 	 *
 	 * Load dependencies, the plugin text-domain and execute all hooks
-	 * we previously registered inside the function define_hooks().
+	 * we previously registered inside the function load_hooks().
 	 *
 	 * @since 1.0.0
 	 */
