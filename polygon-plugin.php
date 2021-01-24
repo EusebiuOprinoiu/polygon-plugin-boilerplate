@@ -31,9 +31,9 @@
 
 
 
-// Abort if this file is called directly.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 
