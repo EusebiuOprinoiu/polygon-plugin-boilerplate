@@ -36,7 +36,7 @@ class Polygon_Plugin_Textdomain {
 
 
 	/**
-	 * Load the plugin textdomain for translation.
+	 * Load the plugin textdomain.
 	 *
 	 * The plugin tries to load the files from the global /languages/ folder first.
 	 * If it can't find any, it will load the files from the local /languages/ folder.

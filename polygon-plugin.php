@@ -33,13 +33,13 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                    // Plugin version.
-define( 'POLYGON_PLUGIN_NAME', 'Polygon Plugin' );              // Plugin name.
-define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );              // Plugin slug.
+define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );
+define( 'POLYGON_PLUGIN_NAME', 'Polygon Plugin' );
+define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );
 
-define( 'POLYGON_PLUGIN_FILE', __FILE__ );                      // Path to main plugin file.
-define( 'POLYGON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );     // URL to plugin directory.
-define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
+define( 'POLYGON_PLUGIN_FILE', __FILE__ );
+define( 'POLYGON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
 
@@ -77,10 +77,8 @@ register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
 
 
 
-
-
 /**
- * Load and execute the code of our plugin if all requirements are met.
+ * Load and execute if all requirements are met.
  *
  * @since 1.0.0
  */
