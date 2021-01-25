@@ -6,14 +6,7 @@
  * @package Polygon_Plugin
  */
 
-
-
-
-
-// Exit if accessed directly.
-if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit;
-}
+defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 
 
 

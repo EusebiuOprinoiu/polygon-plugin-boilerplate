@@ -6,6 +6,8 @@
  * @package Polygon_Plugin
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 

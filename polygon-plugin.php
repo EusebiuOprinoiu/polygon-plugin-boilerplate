@@ -27,14 +27,7 @@
  * @package Polygon_Plugin
  */
 
-
-
-
-
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 
 
@@ -53,8 +46,6 @@ define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );    // Path to plugi
 
 
 /**
- * Activate Polygon Plugin.
- *
  * Code that runs during the plugin activation.
  *
  * @since 1.0.0
@@ -71,8 +62,6 @@ register_activation_hook( POLYGON_PLUGIN_FILE, 'activate_polygon_plugin' );
 
 
 /**
- * Deactivate Polygon Plugin.
- *
  * Code that runs during the plugin deactivation.
  *
  * @since 1.0.0
@@ -91,20 +80,18 @@ register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
 
 
 /**
- * Run Polygon Plugin.
- *
  * Load and execute the code of our plugin if all requirements are met.
  *
  * @since 1.0.0
  */
 function run_polygon_plugin() {
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
-	$requirements = new Polygon_Plugin_Requirements();
-	$requirements->init();
-
 	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-textdomain.php';
 	$textdomain = new Polygon_Plugin_Textdomain();
 	$textdomain->init();
+
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
+	$requirements = new Polygon_Plugin_Requirements();
+	$requirements->init();
 
 	if ( $requirements->check() ) {
 		require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin.php';
