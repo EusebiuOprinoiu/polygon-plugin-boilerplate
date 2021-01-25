@@ -83,16 +83,17 @@ register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
  * @since 1.0.0
  */
 function run_polygon_plugin() {
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin.php';
 	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-textdomain.php';
+	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
+
 	$textdomain = new Polygon_Plugin_Textdomain();
 	$textdomain->init();
 
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
 	$requirements = new Polygon_Plugin_Requirements();
 	$requirements->init();
 
 	if ( $requirements->check() ) {
-		require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin.php';
 		$plugin = new Polygon_Plugin();
 		$plugin->run();
 	}
