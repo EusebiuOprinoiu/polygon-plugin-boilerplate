@@ -23,42 +23,6 @@ defined( 'ABSPATH' ) || exit;
 class Polygon_Plugin_Requirements {
 
 	/**
-	 * Minimum required version of PHP.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $minimum_php_version;
-
-	/**
-	 * Minimum recommended version of PHP.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $recommended_php_version;
-
-
-
-
-
-	/**
-	 * Get things started.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		$this->minimum_php_version     = '7.2';
-		$this->recommended_php_version = '7.4';
-	}
-
-
-
-
-
-	/**
 	 * Actions and filters.
 	 *
 	 * @since 1.0.0
@@ -104,7 +68,7 @@ class Polygon_Plugin_Requirements {
 	 * @return bool
 	 */
 	public function check_php() {
-		return version_compare( PHP_VERSION, $this->minimum_php_version ) >= 0;
+		return version_compare( PHP_VERSION, POLYGON_PLUGIN_MIN_PHP_VERSION ) >= 0;
 	}
 
 
@@ -153,11 +117,11 @@ class Polygon_Plugin_Requirements {
 					</p>
 					<p>
 						<?php // phpcs:ignore
-							printf( esc_html__( 'Polygon Plugin will not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), $this->minimum_php_version, PHP_VERSION );
+							printf( esc_html__( '%1$s doesn\'t run on PHP versions older than %2$s. You are running on version %3$s which has serious security and performance issues.', 'polygon-plugin' ), POLYGON_PLUGIN_NAME, POLYGON_PLUGIN_MIN_PHP_VERSION, PHP_VERSION );
 						?>
 						<br>
 						<?php // phpcs:ignore
-							printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'polygon-plugin' ), $this->recommended_php_version );
+							printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'polygon-plugin' ), POLYGON_PLUGIN_REC_PHP_VERSION );
 						?>
 					</p>
 					<?php if ( $disable_button ) { ?>

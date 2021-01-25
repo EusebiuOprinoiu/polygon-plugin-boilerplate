@@ -40,6 +40,10 @@ define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );
 define( 'POLYGON_PLUGIN_FILE', __FILE__ );
 define( 'POLYGON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'POLYGON_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+
+define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.2' );
+define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
 
 
 
