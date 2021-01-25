@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Polygon_Plugin_Textdomain {
 
 	/**
-	 * Actions and filters.
+	 * Hook into actions and filters.
 	 *
 	 * @since 1.0.0
 	 */
@@ -40,9 +40,6 @@ class Polygon_Plugin_Textdomain {
 	 *
 	 * The plugin tries to load the files from the global /languages/ folder first.
 	 * If it can't find any, it will load the files from the local /languages/ folder.
-	 *
-	 * Global folder: wp-content/languages/plugins/polygon-plugin-en_US.mo
-	 * Local folder:  wp-content/plugins/polygon-plugin/languages/polygon-plugin-en_US.mo
 	 *
 	 * @since 1.0.0
 	 */

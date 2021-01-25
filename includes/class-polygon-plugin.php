@@ -23,10 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Polygon_Plugin {
 
 	/**
-	 * Execute all hooks.
-	 *
-	 * Load dependencies, the plugin text-domain and execute all hooks
-	 * we previously registered inside the function load_hooks().
+	 * Get things started.
 	 *
 	 * @since 1.0.0
 	 */
@@ -60,7 +57,7 @@ class Polygon_Plugin {
 	/**
 	 * Register hooks with WordPress.
 	 *
-	 * Create objects from classes and register all hooks with WordPress.
+	 * Create objects from classes and hook into actions and filters.
 	 *
 	 * @since  1.0.0
 	 * @access private

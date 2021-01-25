@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Polygon_Plugin_Updates {
 
 	/**
-	 * Actions and filters.
+	 * Hook into actions and filters.
 	 *
 	 * @since 1.0.0
 	 */
