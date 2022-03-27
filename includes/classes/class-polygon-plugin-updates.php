@@ -63,13 +63,13 @@ class Polygon_Plugin_Updates {
 			/* phpcs:ignore
 			// Migrate options to version 1.1.0.
 			if ( version_compare( $polygon_plugin['db-version'], '1.1.0' ) < 0 ) {
-				require_once POLYGON_PLUGIN_DIR . 'includes/general/updates/update-to-version-1.1.0.php';
+				require_once POLYGON_PLUGIN_DIR . 'includes/classes/updates/update-to-version-1.1.0.php';
 				$polygon_plugin['db-version'] = '1.1.0';
 			}
 
 			// Migrate options to version 1.2.0.
 			if ( version_compare( $polygon_plugin['db-version'], '1.2.0' ) < 0 ) {
-				require_once POLYGON_PLUGIN_DIR . 'includes/general/updates/update-to-version-1.2.0.php';
+				require_once POLYGON_PLUGIN_DIR . 'includes/classes/updates/update-to-version-1.2.0.php';
 				$polygon_plugin['db-version'] = '1.2.0';
 			}
 			*/
