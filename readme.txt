@@ -50,11 +50,11 @@ The manual installation method involves downloading the plugin and uploading it 
 
 ## Frequently Asked Questions
 
-No questions added yet! :(
+No questions yet!
 
 ## Screenshots
 
-No screenshots added yet! :(
+No screenshots yet!
 
 ## Changelog
 
