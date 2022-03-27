@@ -38,9 +38,8 @@ define( 'POLYGON_PLUGIN_NAME', 'Polygon Plugin' );
 define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );
 
 define( 'POLYGON_PLUGIN_FILE', __FILE__ );
-define( 'POLYGON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'POLYGON_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'POLYGON_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.2' );
 define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
@@ -56,7 +55,7 @@ define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function activate_polygon_plugin( $network_wide ) {
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-activator.php';
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-activator.php';
 	Polygon_Plugin_Activator::activate( $network_wide );
 }
 register_activation_hook( POLYGON_PLUGIN_FILE, 'activate_polygon_plugin' );
@@ -72,7 +71,7 @@ register_activation_hook( POLYGON_PLUGIN_FILE, 'activate_polygon_plugin' );
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function deactivate_polygon_plugin( $network_wide ) {
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-deactivator.php';
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-deactivator.php';
 	Polygon_Plugin_Deactivator::deactivate( $network_wide );
 }
 register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
@@ -87,9 +86,9 @@ register_deactivation_hook( POLYGON_PLUGIN_FILE, 'deactivate_polygon_plugin' );
  * @since 1.0.0
  */
 function run_polygon_plugin() {
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin.php';
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-textdomain.php';
-	require_once POLYGON_PLUGIN_DIR . 'includes/class-polygon-plugin-requirements.php';
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin.php';
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-textdomain.php';
+	require_once POLYGON_PLUGIN_DIR_PATH . 'includes/class-polygon-plugin-requirements.php';
 
 	$textdomain = new Polygon_Plugin_Textdomain();
 	$textdomain->init();

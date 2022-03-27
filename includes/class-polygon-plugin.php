@@ -45,9 +45,9 @@ class Polygon_Plugin {
 	 * @access private
 	 */
 	private function includes() {
-		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-admin.php';
-		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-public.php';
-		require_once POLYGON_PLUGIN_DIR . 'includes/classes/class-polygon-plugin-updates.php';
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/classes/class-polygon-plugin-admin.php';
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/classes/class-polygon-plugin-public.php';
+		require_once POLYGON_PLUGIN_DIR_PATH . 'includes/classes/class-polygon-plugin-updates.php';
 	}
 
 

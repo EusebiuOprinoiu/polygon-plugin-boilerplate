@@ -44,6 +44,6 @@ class Polygon_Plugin_Textdomain {
 	 * @since 1.0.0
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'polygon-plugin', false, plugin_basename( POLYGON_PLUGIN_DIR ) . '/languages/' );
+		load_plugin_textdomain( 'polygon-plugin', false, plugin_basename( POLYGON_PLUGIN_DIR_PATH ) . '/languages/' );
 	}
 }
