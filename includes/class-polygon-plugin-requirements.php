@@ -117,7 +117,7 @@ class Polygon_Plugin_Requirements {
 					</p>
 					<p>
 						<?php // phpcs:ignore
-							printf( esc_html__( '%1$s doesn\'t run on PHP versions older than %2$s. You are running on version %3$s which has serious security and performance issues.', 'polygon-plugin' ), POLYGON_PLUGIN_NAME, POLYGON_PLUGIN_MIN_PHP_VERSION, PHP_VERSION );
+							printf( esc_html__( 'Polygon Plugin doesn\'t run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'polygon-plugin' ), POLYGON_PLUGIN_MIN_PHP_VERSION, PHP_VERSION );
 						?>
 						<br>
 						<?php // phpcs:ignore

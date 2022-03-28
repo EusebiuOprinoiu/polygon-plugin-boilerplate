@@ -33,16 +33,18 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );
-define( 'POLYGON_PLUGIN_NAME', 'Polygon Plugin' );
-define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );
+/**
+ * Define plugin constants.
+ */
+define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );                         // Current plugin version.
+define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );                   // Unique plugin identifier.
 
-define( 'POLYGON_PLUGIN_FILE', __FILE__ );
-define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'POLYGON_PLUGIN_FILE', __FILE__ );                           // Path to main plugin file.
+define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
+define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
 
-define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.2' );
-define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
+define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.2' );                   // Minimum PHP version.
+define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );                   // Recommended PHP version.
 
 
 

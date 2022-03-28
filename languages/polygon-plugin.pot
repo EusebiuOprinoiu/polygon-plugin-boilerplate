@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Polygon Plugin Boilerplate\n"
-"POT-Creation-Date: 2022-03-26 22:16+0200\n"
+"POT-Creation-Date: 2022-03-28 03:11+0300\n"
 "PO-Revision-Date: 2020-07-21 16:00+0300\n"
 "Last-Translator: Eusebiu Oprinoiu\n"
 "Language-Team: Polygon Themes\n"
@@ -29,8 +29,8 @@ msgstr ""
 #: includes/class-polygon-plugin-requirements.php:120
 #, php-format
 msgid ""
-"%1$s doesn't run on PHP versions older than %2$s. You are running on version "
-"%3$s which has serious security and performance issues."
+"Polygon Plugin doesn't run on PHP versions older than %1$s. You are running "
+"on version %2$s which has serious security and performance issues."
 msgstr ""
 
 #: includes/class-polygon-plugin-requirements.php:124
