@@ -33,9 +33,6 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-/**
- * Define plugin constants.
- */
 define( 'POLYGON_PLUGIN_VERSION', '1.0.0' );
 define( 'POLYGON_PLUGIN_SLUG', 'polygon-plugin' );
 
