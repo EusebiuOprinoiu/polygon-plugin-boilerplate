@@ -100,4 +100,4 @@ function run_polygon_plugin() {
 		$plugin->run();
 	}
 }
-run_polygon_plugin();
+add_action( 'plugins_loaded', 'run_polygon_plugin' );
