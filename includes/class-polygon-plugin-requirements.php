@@ -126,7 +126,7 @@ class Polygon_Plugin_Requirements {
 					</p>
 					<?php if ( $disable_button ) { ?>
 						<p>
-							<a href="<?php echo esc_url( wp_nonce_url( '?disable_polygon_plugin=true', 'disable-polygon-plugin' ) ); ?>">
+							<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'disable_polygon_plugin', 'true' ), 'disable-polygon-plugin' ) ); ?>">
 								<b><?php echo esc_html__( 'Disable Plugin', 'polygon-plugin' ); ?></b>
 							</a>
 						</p>
