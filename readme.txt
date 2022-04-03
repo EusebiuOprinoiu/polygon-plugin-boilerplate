@@ -59,7 +59,9 @@ No screenshots yet!
 ## Changelog
 
 #### Version 1.0.0
+Release date: March 25, 2022
 - First release
 
 #### Version 0.1.0
-- Alpha release
+Release date: March 15, 2020
+- Internal release
