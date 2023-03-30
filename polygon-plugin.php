@@ -7,7 +7,7 @@
  * Description:       Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress plugins.
  * Version:           1.0.0
  * Requires PHP:      7.2
- * Requires at least: 5.0
+ * Requires at least: 5.6
  *
  * Text Domain:       polygon-plugin
  * Domain Path:       /languages/

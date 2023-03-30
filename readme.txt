@@ -4,8 +4,8 @@ Contributors:      PolygonThemes, EusebiuOprinoiu
 Tags:              polygon, plugin, boilerplate
 Stable tag:        1.0.0 (or trunk)
 Requires PHP:      7.2
-Tested up to:      5.9
-Requires at least: 5.0
+Tested up to:      6.2
+Requires at least: 5.6
 License:           GPLv3 or later
 License URI:       https://choosealicense.com/licenses/gpl-3.0
 Donate link:       https://paypal.me/EusebiuOprinoiu
