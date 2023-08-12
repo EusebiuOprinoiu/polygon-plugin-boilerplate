@@ -6,8 +6,8 @@
  * Author URI:        https://polygonthemes.com
  * Description:       Polygon Plugin Boilerplate is a standardized, organized, object-oriented foundation for building high-quality WordPress plugins.
  * Version:           1.0.0
- * Requires PHP:      7.2
- * Requires at least: 5.6
+ * Requires PHP:      7.4
+ * Requires at least: 5.8
  *
  * Text Domain:       polygon-plugin
  * Domain Path:       /languages/
@@ -40,7 +40,7 @@ define( 'POLYGON_PLUGIN_FILE', __FILE__ );
 define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
-define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.2' );
+define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.4' );
 define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
 
 
