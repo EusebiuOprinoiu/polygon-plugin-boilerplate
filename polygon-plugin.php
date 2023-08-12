@@ -41,7 +41,7 @@ define( 'POLYGON_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'POLYGON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 define( 'POLYGON_PLUGIN_MIN_PHP_VERSION', '7.4' );
-define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.2' );
+define( 'POLYGON_PLUGIN_REC_PHP_VERSION', '8.0' );
 
 
 
