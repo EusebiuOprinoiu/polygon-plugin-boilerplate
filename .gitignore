@@ -42,7 +42,6 @@ bower_components
 **/third-party/*
 !**/third-party/composer
 !**/third-party/autoload.php
-!**/third-party/package-name
 
 # Github Specific Files
 !.gitkeep
