@@ -39,10 +39,10 @@ node_modules
 bower_components
 
 # Development Folders
-# **/third-party/*
-# !**/third-party/composer
-# !**/third-party/autoload.php
-# !**/third-party/package-name
+**/third-party/*
+!**/third-party/composer
+!**/third-party/autoload.php
+!**/third-party/package-name
 
 # Github Specific Files
 !.gitkeep
